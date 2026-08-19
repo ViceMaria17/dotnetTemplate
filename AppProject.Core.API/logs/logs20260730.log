@@ -1,0 +1,1130 @@
+[14:18:53 INF] () Start installing Hangfire SQL objects...
+[14:18:54 INF] () Hangfire SQL objects installed.
+[14:18:56 INF] () Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[14:18:56 INF] () Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[14:18:56 INF] () Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[14:18:56 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[14:18:56 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[14:18:56 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[14:18:56 INF] () Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[14:18:56 INF] () No migrations were applied. The database is already up to date.
+[14:18:56 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[14:18:56 INF] () Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[14:18:56 INF] () User profile is available. Using 'C:\Users\vicen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[14:18:56 INF] () Now listening on: https://localhost:7121
+[14:18:56 INF] () Starting Hangfire Server using job storage: 'SQL Server: localhost\SQLEXPRESS@AppProject'
+[14:18:56 INF] () Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+[14:18:56 INF] () Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+[14:18:56 INF] () Application started. Press Ctrl+C to shut down.
+[14:18:56 INF] () Hosting environment: Development
+[14:18:56 INF] () Content root path: C:\Course\dotnet-template\AppProject.Core.API
+[14:18:56 INF] () Server desktop-0fm4m6s:10668:f819214d successfully announced in 20.6835 ms
+[14:18:56 INF] () Server desktop-0fm4m6s:10668:f819214d is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+[14:18:56 INF] () 1 servers were removed due to timeout
+[14:18:57 INF] () Server desktop-0fm4m6s:10668:f819214d all the dispatchers started
+[14:18:57 INF] () Starting job SampleJob at "2026-07-30T12:18:57.4928150Z".
+[14:18:57 INF] () Executing SampleJob at "2026-07-30T12:18:57.4965851Z".
+[14:18:57 INF] () Completed job SampleJob at "2026-07-30T12:18:57.4990531Z".
+[14:19:43 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[14:19:43 INF] () CORS policy execution successful.
+[14:19:43 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 204 null null 66.903ms
+[14:19:43 INF] () Request starting HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[14:19:43 INF] () CORS policy execution successful.
+[14:19:44 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[14:19:44 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetCurrentUserPermissions", controller = "Permission"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrentUserPermissionsAsync(AppProject.Models.Auth.PermissionContext, System.Threading.CancellationToken) on controller AppProject.Core.API.Controllers.Auth.PermissionController (AppProject.Core.API).
+[14:19:44 INF] () Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[14:19:44 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.Auth.PermissionType[]'.
+[14:19:44 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API) in 133.6308ms
+[14:19:44 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[14:19:44 INF] () Request finished HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 200 null application/json; charset=utf-8 949.7803ms
+[14:19:46 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - null null
+[14:19:46 INF] () CORS policy execution successful.
+[14:19:46 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - 204 null null 12.1732ms
+[14:19:46 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - null null
+[14:19:46 INF] () CORS policy execution successful.
+[14:19:46 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:19:46 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:19:47 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_0) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:19:47 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:19:47 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 146.124ms
+[14:19:47 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:19:47 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 171.0948ms
+[14:19:58 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:19:58 INF] () CORS policy execution successful.
+[14:19:58 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 204 null null 25.5501ms
+[14:19:58 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:19:58 INF] () CORS policy execution successful.
+[14:19:58 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:19:58 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:19:58 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[14:19:58 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:19:58 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 23.8112ms
+[14:19:58 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:19:58 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 43.2364ms
+[14:20:01 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - null null
+[14:20:01 INF] () CORS policy execution successful.
+[14:20:01 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - 204 null null 3.2835ms
+[14:20:01 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - null null
+[14:20:01 INF] () CORS policy execution successful.
+[14:20:01 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:20:01 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:20:01 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_0) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:20:01 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:20:01 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 5.5131ms
+[14:20:01 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:20:01 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 16.5345ms
+[14:20:08 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CitySummary/GetSummaries?Take=100 - null null
+[14:20:08 INF] () CORS policy execution successful.
+[14:20:08 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CitySummary/GetSummaries?Take=100 - 204 null null 3.3419ms
+[14:20:08 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CitySummary/GetSummaries?Take=100 - null null
+[14:20:08 INF] () CORS policy execution successful.
+[14:20:08 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CitySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:20:08 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CitySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.CitySummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CitySummaryController (AppProject.Core.Controllers.General).
+[14:20:08 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[Name], [s].[Name] AS [StateName], [c0].[StateId], [c1].[Name] AS [CountryName], [s].[CountryId]
+FROM (
+    SELECT TOP(@__p_0) [c].[Id], [c].[Name], [c].[StateId]
+    FROM [Cities] AS [c]
+    ORDER BY [c].[Name]
+) AS [c0]
+INNER JOIN [States] AS [s] ON [c0].[StateId] = [s].[Id]
+INNER JOIN [Countries] AS [c1] ON [s].[CountryId] = [c1].[Id]
+ORDER BY [c0].[Name]
+[14:20:08 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CitySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:20:08 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CitySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 33.4099ms
+[14:20:08 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CitySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:20:08 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CitySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 48.5609ms
+[14:20:46 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CitySummary/GetSummaries?Take=100 - null null
+[14:20:46 INF] () CORS policy execution successful.
+[14:20:46 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CitySummary/GetSummaries?Take=100 - 204 null null 30.1557ms
+[14:20:46 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CitySummary/GetSummaries?Take=100 - null null
+[14:20:46 INF] () CORS policy execution successful.
+[14:20:46 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CitySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:20:46 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CitySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.CitySummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CitySummaryController (AppProject.Core.Controllers.General).
+[14:20:46 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[Name], [s].[Name] AS [StateName], [c0].[StateId], [c1].[Name] AS [CountryName], [s].[CountryId]
+FROM (
+    SELECT TOP(@__p_0) [c].[Id], [c].[Name], [c].[StateId]
+    FROM [Cities] AS [c]
+    ORDER BY [c].[Name]
+) AS [c0]
+INNER JOIN [States] AS [s] ON [c0].[StateId] = [s].[Id]
+INNER JOIN [Countries] AS [c1] ON [s].[CountryId] = [c1].[Id]
+ORDER BY [c0].[Name]
+[14:20:46 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CitySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:20:46 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CitySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 11.4261ms
+[14:20:46 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CitySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:20:46 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CitySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 24.5371ms
+[14:20:53 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=bolo - null null
+[14:20:53 INF] () CORS policy execution successful.
+[14:20:53 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=bolo - 204 null null 4.2515ms
+[14:20:53 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=bolo - null null
+[14:20:53 INF] () CORS policy execution successful.
+[14:20:53 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:20:53 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:20:53 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (7ms) [Parameters=[@__p_1='?' (DbType = Int32), @__searchText_0_contains='?' (Size = 36) (DbType = AnsiString), @__searchText_0_contains_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_1) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    WHERE CONVERT(varchar(36), [s].[Id]) LIKE @__searchText_0_contains ESCAPE '\' OR [s].[Name] LIKE @__searchText_0_contains_1 ESCAPE N'\' OR COALESCE([s].[Code], N'') LIKE @__searchText_0_contains_1 ESCAPE N'\'
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:20:53 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:20:53 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 61.7388ms
+[14:20:53 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:20:53 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=bolo - 200 null application/json; charset=utf-8 117.0581ms
+[14:30:53 INF] () Start installing Hangfire SQL objects...
+[14:30:54 INF] () Hangfire SQL objects installed.
+[14:30:55 INF] () Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[14:30:55 INF] () Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[14:30:55 INF] () Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[14:30:55 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[14:30:55 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[14:30:55 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[14:30:55 INF] () Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[14:30:55 INF] () No migrations were applied. The database is already up to date.
+[14:30:55 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[14:30:55 INF] () Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[14:30:55 INF] () User profile is available. Using 'C:\Users\vicen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[14:30:55 INF] () Now listening on: https://localhost:7121
+[14:30:55 INF] () Starting Hangfire Server using job storage: 'SQL Server: localhost\SQLEXPRESS@AppProject'
+[14:30:55 INF] () Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+[14:30:55 INF] () Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+[14:30:55 INF] () Application started. Press Ctrl+C to shut down.
+[14:30:55 INF] () Hosting environment: Development
+[14:30:55 INF] () Content root path: C:\Course\dotnet-template\AppProject.Core.API
+[14:30:55 INF] () Server desktop-0fm4m6s:13620:72df4707 successfully announced in 17.5863 ms
+[14:30:55 INF] () Server desktop-0fm4m6s:13620:72df4707 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+[14:30:56 INF] () 1 servers were removed due to timeout
+[14:30:56 INF] () Server desktop-0fm4m6s:13620:72df4707 all the dispatchers started
+[14:31:32 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[14:31:32 INF] () CORS policy execution successful.
+[14:31:32 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 204 null null 64.7718ms
+[14:31:32 INF] () Request starting HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[14:31:32 INF] () CORS policy execution successful.
+[14:31:33 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[14:31:33 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetCurrentUserPermissions", controller = "Permission"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrentUserPermissionsAsync(AppProject.Models.Auth.PermissionContext, System.Threading.CancellationToken) on controller AppProject.Core.API.Controllers.Auth.PermissionController (AppProject.Core.API).
+[14:31:33 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[14:31:33 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.Auth.PermissionType[]'.
+[14:31:33 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API) in 149.014ms
+[14:31:33 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[14:31:33 INF] () Request finished HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 200 null application/json; charset=utf-8 887.4852ms
+[14:31:39 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:31:39 INF] () CORS policy execution successful.
+[14:31:39 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 204 null null 11.2049ms
+[14:31:39 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:31:39 INF] () CORS policy execution successful.
+[14:31:39 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:31:39 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:31:39 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (16ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[14:31:39 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:31:39 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 158.9857ms
+[14:31:39 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:31:39 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 190.323ms
+[14:32:09 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/Country/Post - null null
+[14:32:09 INF] () CORS policy execution successful.
+[14:32:09 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/Country/Post - 204 null null 31.5333ms
+[14:32:09 INF] () Request starting HTTP/2 POST https://localhost:7121/api/general/Country/Post - application/json; charset=utf-8 79
+[14:32:09 INF] () CORS policy execution successful.
+[14:32:09 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountryController.PostAsync (AppProject.Core.Controllers.General)'
+[14:32:09 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Post", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostAsync(AppProject.Models.CreateOrUpdateRequest`1[AppProject.Core.Models.General.Country], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountryController (AppProject.Core.Controllers.General).
+[14:32:09 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (4ms) [Parameters=[@__country_Name_0='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Countries] AS [c]
+        WHERE [c].[Name] = @__country_Name_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[14:32:09 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 200), @p2='?' (DbType = DateTimeOffset), @p3='?' (DbType = Guid), @p4='?' (Size = 255), @p5='?' (Size = 200), @p6='?' (DbType = DateTimeOffset), @p7='?' (DbType = Guid), @p8='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Countries] ([Id], [Code], [CreatedAt], [CreatedByUserId], [CreatedByUserName], [Name], [UpdatedAt], [UpdatedByUserId], [UpdatedByUserName])
+OUTPUT INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+[14:32:09 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.KeyResponse`1[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[14:32:09 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountryController.PostAsync (AppProject.Core.Controllers.General) in 276.8488ms
+[14:32:09 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountryController.PostAsync (AppProject.Core.Controllers.General)'
+[14:32:09 INF] () Request finished HTTP/2 POST https://localhost:7121/api/general/Country/Post - 200 null application/json; charset=utf-8 295.4801ms
+[14:32:09 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:32:09 INF] () CORS policy execution successful.
+[14:32:09 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 204 null null 3.6005ms
+[14:32:09 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:32:09 INF] () CORS policy execution successful.
+[14:32:09 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:09 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:32:09 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[14:32:09 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:32:09 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 6.5361ms
+[14:32:09 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:09 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 18.3057ms
+[14:32:16 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/Country/Get?Id=6c01c06e-1fc5-41af-5941-08dedb520bf6 - null null
+[14:32:16 INF] () CORS policy execution successful.
+[14:32:16 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/Country/Get?Id=6c01c06e-1fc5-41af-5941-08dedb520bf6 - 204 null null 3.7105ms
+[14:32:16 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/Country/Get?Id=6c01c06e-1fc5-41af-5941-08dedb520bf6 - null null
+[14:32:16 INF] () CORS policy execution successful.
+[14:32:16 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountryController.GetAsync (AppProject.Core.Controllers.General)'
+[14:32:16 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Get", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(AppProject.Models.GetByIdRequest`1[System.Guid], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountryController (AppProject.Core.Controllers.General).
+[14:32:16 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name], [c].[Code], [c].[RowVersion]
+FROM [Countries] AS [c]
+WHERE [c].[Id] = @__request_Id_0
+[14:32:16 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.EntityResponse`1[[AppProject.Core.Models.General.Country, AppProject.Core.Models.General, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:32:16 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountryController.GetAsync (AppProject.Core.Controllers.General) in 20.281ms
+[14:32:16 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountryController.GetAsync (AppProject.Core.Controllers.General)'
+[14:32:16 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/Country/Get?Id=6c01c06e-1fc5-41af-5941-08dedb520bf6 - 200 null application/json; charset=utf-8 33.7787ms
+[14:32:21 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/Country/Put - null null
+[14:32:21 INF] () CORS policy execution successful.
+[14:32:21 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/Country/Put - 204 null null 3.1146ms
+[14:32:21 INF] () Request starting HTTP/2 PUT https://localhost:7121/api/general/Country/Put - application/json; charset=utf-8 114
+[14:32:21 INF] () CORS policy execution successful.
+[14:32:21 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountryController.PutAsync (AppProject.Core.Controllers.General)'
+[14:32:21 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Put", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PutAsync(AppProject.Models.CreateOrUpdateRequest`1[AppProject.Core.Models.General.Country], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountryController (AppProject.Core.Controllers.General).
+[14:32:21 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[@__country_Name_0='?' (Size = 200), @__country_Id_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Countries] AS [c]
+        WHERE [c].[Name] = @__country_Name_0 AND [c].[Id] <> @__country_Id_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[14:32:21 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[@__request_Entity_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Code], [c].[CreatedAt], [c].[CreatedByUserId], [c].[CreatedByUserName], [c].[Name], [c].[RowVersion], [c].[UpdatedAt], [c].[UpdatedByUserId], [c].[UpdatedByUserName]
+FROM [Countries] AS [c]
+WHERE [c].[Id] = @__request_Entity_Id_0
+[14:32:21 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.KeyResponse`1[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[14:32:21 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountryController.PutAsync (AppProject.Core.Controllers.General) in 44.1854ms
+[14:32:21 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountryController.PutAsync (AppProject.Core.Controllers.General)'
+[14:32:21 INF] () Request finished HTTP/2 PUT https://localhost:7121/api/general/Country/Put - 200 null application/json; charset=utf-8 82.6939ms
+[14:32:21 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:32:21 INF] () CORS policy execution successful.
+[14:32:21 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 204 null null 4.2628ms
+[14:32:21 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:32:21 INF] () CORS policy execution successful.
+[14:32:21 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:21 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:32:21 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[14:32:21 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:32:21 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 6.0687ms
+[14:32:21 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:21 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 17.7278ms
+[14:32:26 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/Country/Delete?Id=6c01c06e-1fc5-41af-5941-08dedb520bf6 - null null
+[14:32:26 INF] () CORS policy execution successful.
+[14:32:26 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/Country/Delete?Id=6c01c06e-1fc5-41af-5941-08dedb520bf6 - 204 null null 31.1818ms
+[14:32:26 INF] () Request starting HTTP/2 DELETE https://localhost:7121/api/general/Country/Delete?Id=6c01c06e-1fc5-41af-5941-08dedb520bf6 - null null
+[14:32:26 INF] () CORS policy execution successful.
+[14:32:26 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountryController.DeleteAsync (AppProject.Core.Controllers.General)'
+[14:32:26 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Delete", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteAsync(AppProject.Models.DeleteRequest`1[System.Guid], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountryController (AppProject.Core.Controllers.General).
+[14:32:26 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Code], [c].[CreatedAt], [c].[CreatedByUserId], [c].[CreatedByUserName], [c].[Name], [c].[RowVersion], [c].[UpdatedAt], [c].[UpdatedByUserId], [c].[UpdatedByUserName]
+FROM [Countries] AS [c]
+WHERE [c].[Id] = @__request_Id_0
+[14:32:26 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 8) (DbType = Binary)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Countries]
+OUTPUT 1
+WHERE [Id] = @p0 AND [RowVersion] = @p1;
+[14:32:26 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.EmptyResponse'.
+[14:32:26 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountryController.DeleteAsync (AppProject.Core.Controllers.General) in 63.1913ms
+[14:32:26 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountryController.DeleteAsync (AppProject.Core.Controllers.General)'
+[14:32:26 INF] () Request finished HTTP/2 DELETE https://localhost:7121/api/general/Country/Delete?Id=6c01c06e-1fc5-41af-5941-08dedb520bf6 - 200 null application/json; charset=utf-8 78.0519ms
+[14:32:26 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:32:26 INF] () CORS policy execution successful.
+[14:32:26 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 204 null null 5.0503ms
+[14:32:27 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:32:27 INF] () CORS policy execution successful.
+[14:32:27 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:27 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:32:27 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[14:32:27 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:32:27 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 10.7062ms
+[14:32:27 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:27 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 43.5632ms
+[14:32:36 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=mon - null null
+[14:32:36 INF] () CORS policy execution successful.
+[14:32:36 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=mon - 204 null null 3.7668ms
+[14:32:36 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=mon - null null
+[14:32:36 INF] () CORS policy execution successful.
+[14:32:36 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:36 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:32:36 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (5ms) [Parameters=[@__p_1='?' (DbType = Int32), @__searchText_0_contains='?' (Size = 36) (DbType = AnsiString), @__searchText_0_contains_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_1) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+WHERE CONVERT(varchar(36), [c].[Id]) LIKE @__searchText_0_contains ESCAPE '\' OR [c].[Name] LIKE @__searchText_0_contains_1 ESCAPE N'\' OR COALESCE([c].[Code], N'') LIKE @__searchText_0_contains_1 ESCAPE N'\'
+ORDER BY [c].[Name]
+[14:32:36 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:32:36 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 40.7173ms
+[14:32:36 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:36 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=mon - 200 null application/json; charset=utf-8 51.59ms
+[14:32:41 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=s - null null
+[14:32:41 INF] () CORS policy execution successful.
+[14:32:41 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=s - 204 null null 2.9743ms
+[14:32:41 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=s - null null
+[14:32:41 INF] () CORS policy execution successful.
+[14:32:41 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:41 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:32:41 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__searchText_0_contains='?' (Size = 36) (DbType = AnsiString), @__searchText_0_contains_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_1) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+WHERE CONVERT(varchar(36), [c].[Id]) LIKE @__searchText_0_contains ESCAPE '\' OR [c].[Name] LIKE @__searchText_0_contains_1 ESCAPE N'\' OR COALESCE([c].[Code], N'') LIKE @__searchText_0_contains_1 ESCAPE N'\'
+ORDER BY [c].[Name]
+[14:32:41 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:32:41 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 5.3684ms
+[14:32:41 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:41 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=s - 200 null application/json; charset=utf-8 15.5534ms
+[14:32:47 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=africa - null null
+[14:32:47 INF] () CORS policy execution successful.
+[14:32:47 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=africa - 204 null null 3.9449ms
+[14:32:47 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=africa - null null
+[14:32:47 INF] () CORS policy execution successful.
+[14:32:47 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:47 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:32:47 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (6ms) [Parameters=[@__p_1='?' (DbType = Int32), @__searchText_0_contains='?' (Size = 36) (DbType = AnsiString), @__searchText_0_contains_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_1) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+WHERE CONVERT(varchar(36), [c].[Id]) LIKE @__searchText_0_contains ESCAPE '\' OR [c].[Name] LIKE @__searchText_0_contains_1 ESCAPE N'\' OR COALESCE([c].[Code], N'') LIKE @__searchText_0_contains_1 ESCAPE N'\'
+ORDER BY [c].[Name]
+[14:32:47 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:32:47 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 11.5142ms
+[14:32:47 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:47 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=africa - 200 null application/json; charset=utf-8 23.43ms
+[14:32:52 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:32:52 INF] () CORS policy execution successful.
+[14:32:52 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 204 null null 3.525ms
+[14:32:52 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:32:52 INF] () CORS policy execution successful.
+[14:32:52 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:52 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:32:52 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[14:32:52 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:32:52 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 6.0521ms
+[14:32:52 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:52 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 15.8469ms
+[14:32:55 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - null null
+[14:32:55 INF] () CORS policy execution successful.
+[14:32:55 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - 204 null null 3.4404ms
+[14:32:55 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - null null
+[14:32:55 INF] () CORS policy execution successful.
+[14:32:55 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:55 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:32:55 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_0) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:32:55 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:32:55 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 86.3512ms
+[14:32:55 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:32:55 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 103.8632ms
+[14:33:03 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=b - null null
+[14:33:03 INF] () CORS policy execution successful.
+[14:33:03 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=b - 204 null null 5.4808ms
+[14:33:03 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=b - null null
+[14:33:03 INF] () CORS policy execution successful.
+[14:33:03 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:03 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:33:03 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (4ms) [Parameters=[@__p_1='?' (DbType = Int32), @__searchText_0_contains='?' (Size = 36) (DbType = AnsiString), @__searchText_0_contains_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_1) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    WHERE CONVERT(varchar(36), [s].[Id]) LIKE @__searchText_0_contains ESCAPE '\' OR [s].[Name] LIKE @__searchText_0_contains_1 ESCAPE N'\' OR COALESCE([s].[Code], N'') LIKE @__searchText_0_contains_1 ESCAPE N'\'
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:33:03 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:33:03 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 15.9618ms
+[14:33:03 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:03 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=b - 200 null application/json; charset=utf-8 32.2632ms
+[14:33:12 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=bol - null null
+[14:33:12 INF] () CORS policy execution successful.
+[14:33:12 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=bol - 204 null null 3.4856ms
+[14:33:12 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=bol - null null
+[14:33:12 INF] () CORS policy execution successful.
+[14:33:12 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:12 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:33:12 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (0ms) [Parameters=[@__p_1='?' (DbType = Int32), @__searchText_0_contains='?' (Size = 36) (DbType = AnsiString), @__searchText_0_contains_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_1) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    WHERE CONVERT(varchar(36), [s].[Id]) LIKE @__searchText_0_contains ESCAPE '\' OR [s].[Name] LIKE @__searchText_0_contains_1 ESCAPE N'\' OR COALESCE([s].[Code], N'') LIKE @__searchText_0_contains_1 ESCAPE N'\'
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:33:12 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:33:12 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 5.1183ms
+[14:33:12 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:12 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=bol - 200 null application/json; charset=utf-8 15.1629ms
+[14:33:18 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=l - null null
+[14:33:18 INF] () CORS policy execution successful.
+[14:33:18 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=l - 204 null null 3.2538ms
+[14:33:18 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=l - null null
+[14:33:18 INF] () CORS policy execution successful.
+[14:33:18 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:18 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:33:18 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__searchText_0_contains='?' (Size = 36) (DbType = AnsiString), @__searchText_0_contains_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_1) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    WHERE CONVERT(varchar(36), [s].[Id]) LIKE @__searchText_0_contains ESCAPE '\' OR [s].[Name] LIKE @__searchText_0_contains_1 ESCAPE N'\' OR COALESCE([s].[Code], N'') LIKE @__searchText_0_contains_1 ESCAPE N'\'
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:33:18 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:33:18 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 5.7786ms
+[14:33:18 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:18 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=l - 200 null application/json; charset=utf-8 36.444ms
+[14:33:22 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=m - null null
+[14:33:22 INF] () CORS policy execution successful.
+[14:33:22 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=m - 204 null null 2.7739ms
+[14:33:22 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=m - null null
+[14:33:22 INF] () CORS policy execution successful.
+[14:33:22 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:22 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:33:22 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__searchText_0_contains='?' (Size = 36) (DbType = AnsiString), @__searchText_0_contains_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_1) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    WHERE CONVERT(varchar(36), [s].[Id]) LIKE @__searchText_0_contains ESCAPE '\' OR [s].[Name] LIKE @__searchText_0_contains_1 ESCAPE N'\' OR COALESCE([s].[Code], N'') LIKE @__searchText_0_contains_1 ESCAPE N'\'
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:33:22 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:33:22 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 5.4037ms
+[14:33:22 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:22 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText=m - 200 null application/json; charset=utf-8 14.8664ms
+[14:33:31 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=6c0e3c33-2afb-4291-33c1-08dec58fdf6b&Take=100&SearchText= - null null
+[14:33:31 INF] () CORS policy execution successful.
+[14:33:31 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=6c0e3c33-2afb-4291-33c1-08dec58fdf6b&Take=100&SearchText= - 204 null null 3.0138ms
+[14:33:31 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=6c0e3c33-2afb-4291-33c1-08dec58fdf6b&Take=100&SearchText= - null null
+[14:33:31 INF] () CORS policy execution successful.
+[14:33:31 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:31 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:33:31 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (4ms) [Parameters=[@__p_1='?' (DbType = Int32), @__request_CountryId_Value_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_1) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    WHERE [s].[CountryId] = @__request_CountryId_Value_0
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:33:31 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:33:31 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 12.1726ms
+[14:33:31 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:31 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=6c0e3c33-2afb-4291-33c1-08dec58fdf6b&Take=100&SearchText= - 200 null application/json; charset=utf-8 21.537ms
+[14:33:36 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=0f3370cd-0d7a-4fbc-326b-08dec7d1a13e&Take=100&SearchText= - null null
+[14:33:36 INF] () CORS policy execution successful.
+[14:33:36 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=0f3370cd-0d7a-4fbc-326b-08dec7d1a13e&Take=100&SearchText= - 204 null null 3.0239ms
+[14:33:36 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=0f3370cd-0d7a-4fbc-326b-08dec7d1a13e&Take=100&SearchText= - null null
+[14:33:36 INF] () CORS policy execution successful.
+[14:33:36 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:36 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:33:36 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__p_1='?' (DbType = Int32), @__request_CountryId_Value_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_1) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    WHERE [s].[CountryId] = @__request_CountryId_Value_0
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:33:36 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:33:36 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 5.0238ms
+[14:33:36 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:36 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=0f3370cd-0d7a-4fbc-326b-08dec7d1a13e&Take=100&SearchText= - 200 null application/json; charset=utf-8 16.5509ms
+[14:33:44 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=m - null null
+[14:33:44 INF] () CORS policy execution successful.
+[14:33:44 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=m - 204 null null 13.5783ms
+[14:33:44 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=m - null null
+[14:33:44 INF] () CORS policy execution successful.
+[14:33:44 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:44 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:33:44 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (13ms) [Parameters=[@__p_1='?' (DbType = Int32), @__searchText_0_contains='?' (Size = 36) (DbType = AnsiString), @__searchText_0_contains_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_1) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+WHERE CONVERT(varchar(36), [c].[Id]) LIKE @__searchText_0_contains ESCAPE '\' OR [c].[Name] LIKE @__searchText_0_contains_1 ESCAPE N'\' OR COALESCE([c].[Code], N'') LIKE @__searchText_0_contains_1 ESCAPE N'\'
+ORDER BY [c].[Name]
+[14:33:44 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:33:44 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 39.7302ms
+[14:33:44 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:44 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=m - 200 null application/json; charset=utf-8 66.0473ms
+[14:33:49 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:33:49 INF] () CORS policy execution successful.
+[14:33:49 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 204 null null 3.2587ms
+[14:33:49 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:33:49 INF] () CORS policy execution successful.
+[14:33:49 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:49 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:33:49 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[14:33:49 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:33:49 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 19.697ms
+[14:33:49 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:33:49 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 72.2195ms
+[14:34:06 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/State/Post - null null
+[14:34:06 INF] () CORS policy execution successful.
+[14:34:06 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/State/Post - 204 null null 4.7815ms
+[14:34:06 INF] () Request starting HTTP/2 POST https://localhost:7121/api/general/State/Post - application/json; charset=utf-8 124
+[14:34:06 INF] () CORS policy execution successful.
+[14:34:06 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General)'
+[14:34:06 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Post", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostAsync(AppProject.Models.CreateOrUpdateRequest`1[AppProject.Core.Models.General.State], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[14:34:06 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (6ms) [Parameters=[@__state_CountryId_0='?' (DbType = Guid), @__state_Name_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [States] AS [s]
+        WHERE [s].[CountryId] = @__state_CountryId_0 AND [s].[Name] = @__state_Name_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[14:34:06 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 200), @p2='?' (DbType = Guid), @p3='?' (DbType = DateTimeOffset), @p4='?' (DbType = Guid), @p5='?' (Size = 255), @p6='?' (Size = 200), @p7='?' (DbType = DateTimeOffset), @p8='?' (DbType = Guid), @p9='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [States] ([Id], [Code], [CountryId], [CreatedAt], [CreatedByUserId], [CreatedByUserName], [Name], [UpdatedAt], [UpdatedByUserId], [UpdatedByUserName])
+OUTPUT INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+[14:34:06 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.KeyResponse`1[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[14:34:06 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General) in 80.467ms
+[14:34:06 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General)'
+[14:34:06 INF] () Request finished HTTP/2 POST https://localhost:7121/api/general/State/Post - 200 null application/json; charset=utf-8 122.2807ms
+[14:34:06 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=0f3370cd-0d7a-4fbc-326b-08dec7d1a13e&Take=100&SearchText= - null null
+[14:34:06 INF] () CORS policy execution successful.
+[14:34:06 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=0f3370cd-0d7a-4fbc-326b-08dec7d1a13e&Take=100&SearchText= - 204 null null 3.7695ms
+[14:34:06 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=0f3370cd-0d7a-4fbc-326b-08dec7d1a13e&Take=100&SearchText= - null null
+[14:34:06 INF] () CORS policy execution successful.
+[14:34:06 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:34:06 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:34:06 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (10ms) [Parameters=[@__p_1='?' (DbType = Int32), @__request_CountryId_Value_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_1) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    WHERE [s].[CountryId] = @__request_CountryId_Value_0
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:34:06 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:34:06 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 55.1134ms
+[14:34:06 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:34:06 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=0f3370cd-0d7a-4fbc-326b-08dec7d1a13e&Take=100&SearchText= - 200 null application/json; charset=utf-8 70.083ms
+[14:34:11 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:34:11 INF] () CORS policy execution successful.
+[14:34:11 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 204 null null 4.0252ms
+[14:34:11 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:34:11 INF] () CORS policy execution successful.
+[14:34:11 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:34:11 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:34:11 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[14:34:11 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:34:11 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 7.3427ms
+[14:34:11 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:34:11 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 22.2978ms
+[14:34:12 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - null null
+[14:34:12 INF] () CORS policy execution successful.
+[14:34:12 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - 204 null null 4.6412ms
+[14:34:12 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - null null
+[14:34:12 INF] () CORS policy execution successful.
+[14:34:12 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:34:12 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:34:12 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_0) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:34:12 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:34:12 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 8.8913ms
+[14:34:12 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:34:12 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - 200 null application/json; charset=utf-8 21.1162ms
+[14:34:26 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:34:26 INF] () CORS policy execution successful.
+[14:34:26 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 204 null null 4.4089ms
+[14:34:26 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:34:26 INF] () CORS policy execution successful.
+[14:34:26 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:34:26 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:34:26 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[14:34:26 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:34:26 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 8.7043ms
+[14:34:26 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:34:26 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 38.3891ms
+[14:34:29 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=mo - null null
+[14:34:29 INF] () CORS policy execution successful.
+[14:34:29 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=mo - 204 null null 3.6363ms
+[14:34:29 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=mo - null null
+[14:34:29 INF] () CORS policy execution successful.
+[14:34:29 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:34:29 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:34:29 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (4ms) [Parameters=[@__p_1='?' (DbType = Int32), @__searchText_0_contains='?' (Size = 36) (DbType = AnsiString), @__searchText_0_contains_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_1) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+WHERE CONVERT(varchar(36), [c].[Id]) LIKE @__searchText_0_contains ESCAPE '\' OR [c].[Name] LIKE @__searchText_0_contains_1 ESCAPE N'\' OR COALESCE([c].[Code], N'') LIKE @__searchText_0_contains_1 ESCAPE N'\'
+ORDER BY [c].[Name]
+[14:34:29 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:34:29 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 8.9221ms
+[14:34:29 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:34:29 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100&SearchText=mo - 200 null application/json; charset=utf-8 31.6309ms
+[14:34:51 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/State/Post - null null
+[14:34:51 INF] () CORS policy execution successful.
+[14:34:51 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/State/Post - 204 null null 3.3748ms
+[14:34:51 INF] () Request starting HTTP/2 POST https://localhost:7121/api/general/State/Post - application/json; charset=utf-8 125
+[14:34:51 INF] () CORS policy execution successful.
+[14:34:51 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General)'
+[14:34:51 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Post", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostAsync(AppProject.Models.CreateOrUpdateRequest`1[AppProject.Core.Models.General.State], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[14:34:51 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (0ms) [Parameters=[@__state_CountryId_0='?' (DbType = Guid), @__state_Name_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [States] AS [s]
+        WHERE [s].[CountryId] = @__state_CountryId_0 AND [s].[Name] = @__state_Name_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[14:34:51 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 200), @p2='?' (DbType = Guid), @p3='?' (DbType = DateTimeOffset), @p4='?' (DbType = Guid), @p5='?' (Size = 255), @p6='?' (Size = 200), @p7='?' (DbType = DateTimeOffset), @p8='?' (DbType = Guid), @p9='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [States] ([Id], [Code], [CountryId], [CreatedAt], [CreatedByUserId], [CreatedByUserName], [Name], [UpdatedAt], [UpdatedByUserId], [UpdatedByUserName])
+OUTPUT INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+[14:34:51 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.KeyResponse`1[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[14:34:51 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General) in 8.965ms
+[14:34:51 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General)'
+[14:34:51 INF] () Request finished HTTP/2 POST https://localhost:7121/api/general/State/Post - 200 null application/json; charset=utf-8 19.181ms
+[14:34:51 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - null null
+[14:34:51 INF] () CORS policy execution successful.
+[14:34:51 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - 204 null null 3.3731ms
+[14:34:51 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - null null
+[14:34:51 INF] () CORS policy execution successful.
+[14:34:51 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:34:51 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:34:51 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_0) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:34:51 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:34:51 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 20.6326ms
+[14:34:51 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:34:51 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - 200 null application/json; charset=utf-8 63.8392ms
+[14:34:57 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:34:57 INF] () CORS policy execution successful.
+[14:34:57 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 204 null null 3.4533ms
+[14:34:57 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:34:57 INF] () CORS policy execution successful.
+[14:34:57 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:34:57 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:34:57 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[14:34:57 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:34:57 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 9.0773ms
+[14:34:57 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:34:57 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 21.6001ms
+[14:35:09 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/State/Post - null null
+[14:35:09 INF] () CORS policy execution successful.
+[14:35:09 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/State/Post - 204 null null 3.5529ms
+[14:35:09 INF] () Request starting HTTP/2 POST https://localhost:7121/api/general/State/Post - application/json; charset=utf-8 124
+[14:35:09 INF] () CORS policy execution successful.
+[14:35:09 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General)'
+[14:35:09 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Post", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostAsync(AppProject.Models.CreateOrUpdateRequest`1[AppProject.Core.Models.General.State], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[14:35:09 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[@__state_CountryId_0='?' (DbType = Guid), @__state_Name_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [States] AS [s]
+        WHERE [s].[CountryId] = @__state_CountryId_0 AND [s].[Name] = @__state_Name_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[14:35:09 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 200), @p2='?' (DbType = Guid), @p3='?' (DbType = DateTimeOffset), @p4='?' (DbType = Guid), @p5='?' (Size = 255), @p6='?' (Size = 200), @p7='?' (DbType = DateTimeOffset), @p8='?' (DbType = Guid), @p9='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [States] ([Id], [Code], [CountryId], [CreatedAt], [CreatedByUserId], [CreatedByUserName], [Name], [UpdatedAt], [UpdatedByUserId], [UpdatedByUserName])
+OUTPUT INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+[14:35:09 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.KeyResponse`1[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[14:35:09 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General) in 15.1479ms
+[14:35:09 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General)'
+[14:35:09 INF] () Request finished HTTP/2 POST https://localhost:7121/api/general/State/Post - 200 null application/json; charset=utf-8 45.2723ms
+[14:35:09 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - null null
+[14:35:09 INF] () CORS policy execution successful.
+[14:35:09 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - 204 null null 3.5854ms
+[14:35:09 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - null null
+[14:35:09 INF] () CORS policy execution successful.
+[14:35:09 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:09 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:35:09 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_0) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:35:09 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:35:09 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 28.7815ms
+[14:35:09 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:09 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - 200 null application/json; charset=utf-8 54.3856ms
+[14:35:14 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - null null
+[14:35:14 INF] () CORS policy execution successful.
+[14:35:14 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:14 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:35:14 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_0) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:35:14 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:35:14 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 4.5767ms
+[14:35:14 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:14 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - 200 null application/json; charset=utf-8 13.9781ms
+[14:35:22 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/State/Get?Id=28036fbf-d764-4095-fbf6-08deee36d8c2 - null null
+[14:35:22 INF] () CORS policy execution successful.
+[14:35:22 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/State/Get?Id=28036fbf-d764-4095-fbf6-08deee36d8c2 - 204 null null 2.9835ms
+[14:35:22 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/State/Get?Id=28036fbf-d764-4095-fbf6-08deee36d8c2 - null null
+[14:35:22 INF] () CORS policy execution successful.
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General)'
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Get", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(AppProject.Models.GetByIdRequest`1[System.Guid], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Code], [s].[CountryId], [s].[RowVersion]
+FROM [States] AS [s]
+WHERE [s].[Id] = @__request_Id_0
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.EntityResponse`1[[AppProject.Core.Models.General.State, AppProject.Core.Models.General, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General) in 15.6287ms
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General)'
+[14:35:22 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/State/Get?Id=28036fbf-d764-4095-fbf6-08deee36d8c2 - 200 null application/json; charset=utf-8 27.3083ms
+[14:35:22 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:35:22 INF] () CORS policy execution successful.
+[14:35:22 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 204 null null 3.2312ms
+[14:35:22 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:35:22 INF] () CORS policy execution successful.
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 9.1195ms
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:22 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 24.9912ms
+[14:35:22 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[14:35:22 INF] () CORS policy execution successful.
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 9.4263ms
+[14:35:22 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:22 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 19.2203ms
+[14:35:29 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/State/Put - null null
+[14:35:29 INF] () CORS policy execution successful.
+[14:35:29 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/State/Put - 204 null null 3.3968ms
+[14:35:29 INF] () Request starting HTTP/2 PUT https://localhost:7121/api/general/State/Put - application/json; charset=utf-8 176
+[14:35:29 INF] () CORS policy execution successful.
+[14:35:29 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.PutAsync (AppProject.Core.Controllers.General)'
+[14:35:29 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Put", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PutAsync(AppProject.Models.CreateOrUpdateRequest`1[AppProject.Core.Models.General.State], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[14:35:29 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[@__state_CountryId_0='?' (DbType = Guid), @__state_Name_1='?' (Size = 200), @__state_Id_2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [States] AS [s]
+        WHERE [s].[CountryId] = @__state_CountryId_0 AND [s].[Name] = @__state_Name_1 AND [s].[Id] <> @__state_Id_2) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[14:35:29 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[@__request_Entity_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Code], [s].[CountryId], [s].[CreatedAt], [s].[CreatedByUserId], [s].[CreatedByUserName], [s].[Name], [s].[RowVersion], [s].[UpdatedAt], [s].[UpdatedByUserId], [s].[UpdatedByUserName]
+FROM [States] AS [s]
+WHERE [s].[Id] = @__request_Entity_Id_0
+[14:35:29 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (4ms) [Parameters=[@p9='?' (DbType = Guid), @p0='?' (Size = 200), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTimeOffset), @p3='?' (DbType = Guid), @p4='?' (Size = 255), @p5='?' (Size = 200), @p10='?' (Size = 8) (DbType = Binary), @p6='?' (DbType = DateTimeOffset), @p7='?' (DbType = Guid), @p8='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [States] SET [Code] = @p0, [CountryId] = @p1, [CreatedAt] = @p2, [CreatedByUserId] = @p3, [CreatedByUserName] = @p4, [Name] = @p5, [UpdatedAt] = @p6, [UpdatedByUserId] = @p7, [UpdatedByUserName] = @p8
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p9 AND [RowVersion] = @p10;
+[14:35:29 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.KeyResponse`1[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[14:35:29 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.PutAsync (AppProject.Core.Controllers.General) in 70.27ms
+[14:35:29 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.PutAsync (AppProject.Core.Controllers.General)'
+[14:35:29 INF] () Request finished HTTP/2 PUT https://localhost:7121/api/general/State/Put - 200 null application/json; charset=utf-8 82.9684ms
+[14:35:29 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - null null
+[14:35:29 INF] () CORS policy execution successful.
+[14:35:29 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - 204 null null 4.291ms
+[14:35:29 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - null null
+[14:35:29 INF] () CORS policy execution successful.
+[14:35:29 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:29 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:35:29 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_0) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:35:29 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:35:29 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 18.3467ms
+[14:35:29 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:29 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - 200 null application/json; charset=utf-8 44.104ms
+[14:35:39 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/State/Delete?Id=1750d6ac-f5ff-44a8-fbf5-08deee36d8c2 - null null
+[14:35:39 INF] () CORS policy execution successful.
+[14:35:39 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/State/Delete?Id=1750d6ac-f5ff-44a8-fbf5-08deee36d8c2 - 204 null null 3.026ms
+[14:35:39 INF] () Request starting HTTP/2 DELETE https://localhost:7121/api/general/State/Delete?Id=1750d6ac-f5ff-44a8-fbf5-08deee36d8c2 - null null
+[14:35:39 INF] () CORS policy execution successful.
+[14:35:39 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.DeleteAsync (AppProject.Core.Controllers.General)'
+[14:35:39 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Delete", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteAsync(AppProject.Models.DeleteRequest`1[System.Guid], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[14:35:39 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Code], [s].[CountryId], [s].[CreatedAt], [s].[CreatedByUserId], [s].[CreatedByUserName], [s].[Name], [s].[RowVersion], [s].[UpdatedAt], [s].[UpdatedByUserId], [s].[UpdatedByUserName]
+FROM [States] AS [s]
+WHERE [s].[Id] = @__request_Id_0
+[14:35:39 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 8) (DbType = Binary)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [States]
+OUTPUT 1
+WHERE [Id] = @p0 AND [RowVersion] = @p1;
+[14:35:39 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.EmptyResponse'.
+[14:35:39 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.DeleteAsync (AppProject.Core.Controllers.General) in 27.8669ms
+[14:35:39 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.DeleteAsync (AppProject.Core.Controllers.General)'
+[14:35:39 INF] () Request finished HTTP/2 DELETE https://localhost:7121/api/general/State/Delete?Id=1750d6ac-f5ff-44a8-fbf5-08deee36d8c2 - 200 null application/json; charset=utf-8 43.072ms
+[14:35:39 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - null null
+[14:35:39 INF] () CORS policy execution successful.
+[14:35:39 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - 204 null null 30.5518ms
+[14:35:39 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - null null
+[14:35:39 INF] () CORS policy execution successful.
+[14:35:39 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:39 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:35:39 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_0) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:35:39 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:35:39 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 5.3865ms
+[14:35:39 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:39 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100&SearchText= - 200 null application/json; charset=utf-8 52.8082ms
+[14:35:42 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - null null
+[14:35:42 INF] () CORS policy execution successful.
+[14:35:42 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - 204 null null 3.1983ms
+[14:35:42 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - null null
+[14:35:42 INF] () CORS policy execution successful.
+[14:35:42 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:42 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[14:35:42 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_0) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[14:35:42 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:35:42 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 6.8207ms
+[14:35:42 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:42 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 19.6262ms
+[14:35:49 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CitySummary/GetSummaries?Take=100 - null null
+[14:35:49 INF] () CORS policy execution successful.
+[14:35:49 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CitySummary/GetSummaries?Take=100 - 204 null null 3.7388ms
+[14:35:49 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CitySummary/GetSummaries?Take=100 - null null
+[14:35:49 INF] () CORS policy execution successful.
+[14:35:49 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CitySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:49 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CitySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.CitySummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CitySummaryController (AppProject.Core.Controllers.General).
+[14:35:49 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c0].[Id], [c0].[Name], [s].[Name] AS [StateName], [c0].[StateId], [c1].[Name] AS [CountryName], [s].[CountryId]
+FROM (
+    SELECT TOP(@__p_0) [c].[Id], [c].[Name], [c].[StateId]
+    FROM [Cities] AS [c]
+    ORDER BY [c].[Name]
+) AS [c0]
+INNER JOIN [States] AS [s] ON [c0].[StateId] = [s].[Id]
+INNER JOIN [Countries] AS [c1] ON [s].[CountryId] = [c1].[Id]
+ORDER BY [c0].[Name]
+[14:35:49 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CitySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[14:35:49 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CitySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 37.5696ms
+[14:35:49 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CitySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[14:35:49 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CitySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 56.2506ms
+[15:08:25 INF] () Start installing Hangfire SQL objects...
+[15:08:25 INF] () Hangfire SQL objects installed.
+[15:08:26 INF] () Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[15:08:26 INF] () Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[15:08:26 INF] () Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[15:08:26 INF] () Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[15:08:26 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[15:08:26 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[15:08:26 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[15:08:26 INF] () No migrations were applied. The database is already up to date.
+[15:08:26 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[15:08:27 INF] () Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[15:08:27 INF] () User profile is available. Using 'C:\Users\vicen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[15:08:27 INF] () Now listening on: https://localhost:7121
+[15:08:27 INF] () Starting Hangfire Server using job storage: 'SQL Server: localhost\SQLEXPRESS@AppProject'
+[15:08:27 INF] () Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+[15:08:27 INF] () Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+[15:08:27 INF] () Application started. Press Ctrl+C to shut down.
+[15:08:27 INF] () Hosting environment: Development
+[15:08:27 INF] () Content root path: C:\Course\dotnet-template\AppProject.Core.API
+[15:08:27 INF] () Server desktop-0fm4m6s:7528:754f54a2 successfully announced in 16.978 ms
+[15:08:27 INF] () Server desktop-0fm4m6s:7528:754f54a2 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+[15:08:27 INF] () 1 servers were removed due to timeout
+[15:08:27 INF] () Server desktop-0fm4m6s:7528:754f54a2 all the dispatchers started
+[15:09:17 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[15:09:17 INF] () CORS policy execution successful.
+[15:09:17 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 204 null null 103.6415ms
+[15:09:17 INF] () Request starting HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[15:09:17 INF] () CORS policy execution successful.
+[15:09:18 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[15:09:18 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetCurrentUserPermissions", controller = "Permission"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrentUserPermissionsAsync(AppProject.Models.Auth.PermissionContext, System.Threading.CancellationToken) on controller AppProject.Core.API.Controllers.Auth.PermissionController (AppProject.Core.API).
+[15:09:18 INF] () Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[15:09:18 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.Auth.PermissionType[]'.
+[15:09:18 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API) in 128.5946ms
+[15:09:18 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[15:09:18 INF] () Request finished HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 200 null application/json; charset=utf-8 821.3377ms
+[15:10:48 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - null null
+[15:10:48 INF] () CORS policy execution successful.
+[15:10:48 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - 204 null null 9.6541ms
+[15:10:48 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - null null
+[15:10:48 INF] () CORS policy execution successful.
+[15:10:48 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[15:10:48 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[15:10:49 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s0].[Id], [s0].[Name], [c].[Name] AS [CountryName], [s0].[CountryId]
+FROM (
+    SELECT TOP(@__p_0) [s].[Id], [s].[CountryId], [s].[Name]
+    FROM [States] AS [s]
+    ORDER BY [s].[Name]
+) AS [s0]
+INNER JOIN [Countries] AS [c] ON [s0].[CountryId] = [c].[Id]
+ORDER BY [s0].[Name]
+[15:10:49 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[15:10:49 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 253.6809ms
+[15:10:49 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[15:10:49 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 280.238ms

@@ -1,0 +1,756 @@
+[12:11:36 INF] () Start installing Hangfire SQL objects...
+[12:11:36 INF] () Hangfire SQL objects installed.
+[12:11:38 INF] () Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[12:11:38 INF] () Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[12:11:38 INF] () Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[12:11:38 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[12:11:38 INF] () Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[12:11:38 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[12:11:38 INF] () Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[12:11:38 INF] () No migrations were applied. The database is already up to date.
+[12:11:38 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[12:11:39 INF] () Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[12:11:39 INF] () User profile is available. Using 'C:\Users\vicen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[12:11:39 INF] () Now listening on: https://localhost:7121
+[12:11:39 INF] () Starting Hangfire Server using job storage: 'SQL Server: localhost\SQLEXPRESS@AppProject'
+[12:11:39 INF] () Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+[12:11:39 INF] () Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+[12:11:39 INF] () Application started. Press Ctrl+C to shut down.
+[12:11:39 INF] () Hosting environment: Development
+[12:11:39 INF] () Content root path: C:\Course\dotnet-template\AppProject.Core.API
+[12:11:39 INF] () Server desktop-0fm4m6s:20768:e636c15b successfully announced in 22.0368 ms
+[12:11:39 INF] () Server desktop-0fm4m6s:20768:e636c15b is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+[12:11:39 INF] () 1 servers were removed due to timeout
+[12:11:39 INF] () Server desktop-0fm4m6s:20768:e636c15b all the dispatchers started
+[12:11:39 INF] () Starting job SampleJob at "2026-06-12T10:11:39.9695111Z".
+[12:11:39 INF] () Executing SampleJob at "2026-06-12T10:11:39.9735341Z".
+[12:11:39 INF] () Completed job SampleJob at "2026-06-12T10:11:39.9756055Z".
+[12:11:49 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+[12:11:49 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 126.1164ms
+[12:11:49 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui.css - null null
+[12:11:49 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.css - null null
+[12:11:49 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui-bundle.js - null null
+[12:11:49 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui-standalone-preset.js - null null
+[12:11:49 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.js - null null
+[12:11:49 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.js - 200 null application/javascript;charset=utf-8 118.9718ms
+[12:11:49 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.css - 200 152 text/css 185.3258ms
+[12:11:49 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui.css - 200 23647 text/css 200.0636ms
+[12:11:49 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui-standalone-preset.js - 200 77352 text/javascript 174.2043ms
+[12:11:49 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui-bundle.js - 200 424767 text/javascript 209.344ms
+[12:11:49 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+[12:11:49 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/favicon-32x32.png - null null
+[12:11:49 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/favicon-32x32.png - 200 628 image/png 4.9406ms
+[12:11:49 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 112.5355ms
+[12:13:43 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries - null null
+[12:13:44 INF] () Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+[12:13:44 INF] () AuthenticationScheme: Bearer was challenged.
+[12:13:44 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries - 401 0 null 188.8617ms
+[12:13:57 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+[12:13:57 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 3.4714ms
+[12:13:57 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui.css - null null
+[12:13:57 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.css - null null
+[12:13:57 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.css - 200 152 text/css 4.6928ms
+[12:13:58 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui-bundle.js - null null
+[12:13:58 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui-standalone-preset.js - null null
+[12:13:58 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.js - null null
+[12:13:58 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui.css - 200 23647 text/css 29.8031ms
+[12:13:58 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui-standalone-preset.js - 200 77352 text/javascript 20.1133ms
+[12:13:58 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.js - 200 null application/javascript;charset=utf-8 10.047ms
+[12:13:58 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui-bundle.js - 200 424767 text/javascript 48.7099ms
+[12:13:58 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+[12:13:58 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/favicon-32x32.png - null null
+[12:13:58 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/favicon-32x32.png - 200 628 image/png 26.631ms
+[12:13:58 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 103.2186ms
+[12:14:20 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/oauth2-redirect.html?code=iRj0K-UhAiteiq-6EEkuRfbW8ntR5T9Iz7tx3fZEqf4z4&state=RnJpIEp1biAxMiAyMDI2IDEyOjE0OjA1IEdNVCswMjAwIChDZW50cmFsIEFmcmljYSBUaW1lKQ%3D%3D - null null
+[12:14:20 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/oauth2-redirect.html?code=iRj0K-UhAiteiq-6EEkuRfbW8ntR5T9Iz7tx3fZEqf4z4&state=RnJpIEp1biAxMiAyMDI2IDEyOjE0OjA1IEdNVCswMjAwIChDZW50cmFsIEFmcmljYSBUaW1lKQ%3D%3D - 200 101 text/html 14.0784ms
+[12:14:33 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries - null null
+[12:14:34 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[12:14:34 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[12:14:34 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[12:14:34 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:14:34 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 187.0885ms
+[12:14:34 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[12:14:34 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries - 200 null application/json; charset=utf-8 1357.361ms
+[12:15:08 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/State/Get?Id=0f3370cd-0d7a-4fbc-326b-08dec7d1a13e - null null
+[12:15:08 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General)'
+[12:15:08 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Get", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(AppProject.Models.GetByIdRequest`1[System.Guid], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[12:15:08 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[12:15:08 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (4ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Code], [s].[CountryId], [s].[RowVersion]
+FROM [States] AS [s]
+WHERE [s].[Id] = @__request_Id_0
+[12:15:14 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General) in 6242.6068ms
+[12:15:14 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General)'
+[12:15:19 ERR] () AppProject.Exceptions.AppException: Exception of type 'AppProject.Exceptions.AppException' was thrown.
+   at AppProject.Core.Services.General.StateService.GetEntityAsync(GetByIdRequest`1 request, CancellationToken cancellationToken) in C:\Course\dotnet-template\AppProject.Core.Services.General\StateService.cs:line 27
+   at AppProject.Core.Controllers.General.StateController.GetAsync(GetByIdRequest`1 request, CancellationToken cancellationToken) in C:\Course\dotnet-template\AppProject.Core.Controllers.General\StateController.cs:line 18
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at AppProject.Core.API.Middlewares.SerilogUserEnricherMiddleware.Invoke(HttpContext context) in C:\Course\dotnet-template\AppProject.Core.API\Middlewares\SerilogUserEnricherMiddleware.cs:line 17
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at AppProject.Core.API.Middlewares.ExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Course\dotnet-template\AppProject.Core.API\Middlewares\ExceptionMiddleware.cs:line 23
+[12:15:27 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/State/Get?Id=0f3370cd-0d7a-4fbc-326b-08dec7d1a13e - 500 null application/json 19518.7563ms
+[12:16:45 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/State/Get?Id=f1d8b343-b0e7-4196-0825-08dec7dc9378 - null null
+[12:16:45 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General)'
+[12:16:45 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Get", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(AppProject.Models.GetByIdRequest`1[System.Guid], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[12:16:45 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Code], [s].[CountryId], [s].[RowVersion]
+FROM [States] AS [s]
+WHERE [s].[Id] = @__request_Id_0
+[12:16:45 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.EntityResponse`1[[AppProject.Core.Models.General.State, AppProject.Core.Models.General, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:16:45 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General) in 17.7324ms
+[12:16:45 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General)'
+[12:16:45 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/State/Get?Id=f1d8b343-b0e7-4196-0825-08dec7dc9378 - 200 null application/json; charset=utf-8 55.5828ms
+[12:18:10 INF] () Request starting HTTP/2 PUT https://localhost:7121/api/general/State/Put - application/json 173
+[12:18:10 INF] () CORS policy execution failed.
+[12:18:10 INF] () Request origin https://localhost:7121 does not have permission to access the resource.
+[12:18:10 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.PutAsync (AppProject.Core.Controllers.General)'
+[12:18:10 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Put", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PutAsync(AppProject.Models.CreateOrUpdateRequest`1[AppProject.Core.Models.General.State], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[12:19:28 INF] () Start installing Hangfire SQL objects...
+[12:19:28 INF] () Hangfire SQL objects installed.
+[12:19:29 INF] () Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[12:19:29 INF] () Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[12:19:29 INF] () Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[12:19:30 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[12:19:30 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[12:19:30 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[12:19:30 INF] () Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[12:19:30 INF] () No migrations were applied. The database is already up to date.
+[12:19:30 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[12:19:30 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[12:19:30 INF] () User profile is available. Using 'C:\Users\vicen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[12:19:30 INF] () Now listening on: https://localhost:7121
+[12:19:30 INF] () Starting Hangfire Server using job storage: 'SQL Server: localhost\SQLEXPRESS@AppProject'
+[12:19:30 INF] () Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+[12:19:30 INF] () Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+[12:19:30 INF] () Application started. Press Ctrl+C to shut down.
+[12:19:30 INF] () Hosting environment: Development
+[12:19:30 INF] () Content root path: C:\Course\dotnet-template\AppProject.Core.API
+[12:19:30 INF] () Server desktop-0fm4m6s:2096:7640c9a0 successfully announced in 32.267 ms
+[12:19:30 INF] () Server desktop-0fm4m6s:2096:7640c9a0 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+[12:19:31 INF] () Server desktop-0fm4m6s:2096:7640c9a0 all the dispatchers started
+[12:19:35 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+[12:19:35 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 132.8146ms
+[12:19:35 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+[12:19:35 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 126.8152ms
+[12:20:08 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/oauth2-redirect.html?code=fPovjjIEDjlkJh6rVgb8HAYkV31JahWC8pRtVlxrlZ-C1&state=RnJpIEp1biAxMiAyMDI2IDEyOjE5OjM5IEdNVCswMjAwIChDZW50cmFsIEFmcmljYSBUaW1lKQ%3D%3D - null null
+[12:20:08 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/oauth2-redirect.html?code=fPovjjIEDjlkJh6rVgb8HAYkV31JahWC8pRtVlxrlZ-C1&state=RnJpIEp1biAxMiAyMDI2IDEyOjE5OjM5IEdNVCswMjAwIChDZW50cmFsIEFmcmljYSBUaW1lKQ%3D%3D - 200 101 text/html 24.3506ms
+[12:21:02 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/State/Get?Id=f1d8b343-b0e7-4196-0825-08dec7dc9378 - null null
+[12:21:03 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General)'
+[12:21:03 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Get", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(AppProject.Models.GetByIdRequest`1[System.Guid], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[12:21:03 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[12:21:03 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Code], [s].[CountryId], [s].[RowVersion]
+FROM [States] AS [s]
+WHERE [s].[Id] = @__request_Id_0
+[12:21:03 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.EntityResponse`1[[AppProject.Core.Models.General.State, AppProject.Core.Models.General, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:21:03 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General) in 212.8056ms
+[12:21:04 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General)'
+[12:21:04 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/State/Get?Id=f1d8b343-b0e7-4196-0825-08dec7dc9378 - 200 null application/json; charset=utf-8 1453.8159ms
+[12:22:54 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries - null null
+[12:22:54 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[12:22:54 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[12:22:54 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[12:22:54 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:22:54 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 36.4582ms
+[12:22:54 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[12:22:54 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries - 200 null application/json; charset=utf-8 133.145ms
+[12:23:25 INF] () Request starting HTTP/2 PUT https://localhost:7121/api/general/State/Put - application/json 205
+[12:23:25 INF] () CORS policy execution failed.
+[12:23:25 INF] () Request origin https://localhost:7121 does not have permission to access the resource.
+[12:23:25 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.PutAsync (AppProject.Core.Controllers.General)'
+[12:23:25 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Put", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PutAsync(AppProject.Models.CreateOrUpdateRequest`1[AppProject.Core.Models.General.State], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[12:23:25 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (4ms) [Parameters=[@__state_CountryId_0='?' (DbType = Guid), @__state_Name_1='?' (Size = 200), @__state_Id_2='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [States] AS [s]
+        WHERE [s].[CountryId] = @__state_CountryId_0 AND [s].[Name] = @__state_Name_1 AND [s].[Id] <> @__state_Id_2) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[12:23:25 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[@__request_Entity_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Code], [s].[CountryId], [s].[CreatedAt], [s].[CreatedByUserId], [s].[CreatedByUserName], [s].[Name], [s].[RowVersion], [s].[UpdatedAt], [s].[UpdatedByUserId], [s].[UpdatedByUserName]
+FROM [States] AS [s]
+WHERE [s].[Id] = @__request_Entity_Id_0
+[12:23:26 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (9ms) [Parameters=[@p9='?' (DbType = Guid), @p0='?' (Size = 200), @p1='?' (DbType = Guid), @p2='?' (DbType = DateTimeOffset), @p3='?' (DbType = Guid), @p4='?' (Size = 255), @p5='?' (Size = 200), @p10='?' (Size = 8) (DbType = Binary), @p6='?' (DbType = DateTimeOffset), @p7='?' (DbType = Guid), @p8='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [States] SET [Code] = @p0, [CountryId] = @p1, [CreatedAt] = @p2, [CreatedByUserId] = @p3, [CreatedByUserName] = @p4, [Name] = @p5, [UpdatedAt] = @p6, [UpdatedByUserId] = @p7, [UpdatedByUserName] = @p8
+OUTPUT INSERTED.[RowVersion]
+WHERE [Id] = @p9 AND [RowVersion] = @p10;
+[12:23:26 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.KeyResponse`1[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[12:23:26 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.PutAsync (AppProject.Core.Controllers.General) in 282.6593ms
+[12:23:26 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.PutAsync (AppProject.Core.Controllers.General)'
+[12:23:26 INF] () Request finished HTTP/2 PUT https://localhost:7121/api/general/State/Put - 200 null application/json; charset=utf-8 339.0698ms
+[12:24:19 INF] () Request starting HTTP/2 DELETE https://localhost:7121/api/general/State/Delete?Id=f1d8b343-b0e7-4196-0825-08dec7dc9378 - null null
+[12:24:19 INF] () CORS policy execution failed.
+[12:24:19 INF] () Request origin https://localhost:7121 does not have permission to access the resource.
+[12:24:19 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.DeleteAsync (AppProject.Core.Controllers.General)'
+[12:24:19 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Delete", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteAsync(AppProject.Models.DeleteRequest`1[System.Guid], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[12:24:19 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Code], [c].[CreatedAt], [c].[CreatedByUserId], [c].[CreatedByUserName], [c].[Name], [c].[RowVersion], [c].[UpdatedAt], [c].[UpdatedByUserId], [c].[UpdatedByUserName]
+FROM [Countries] AS [c]
+WHERE [c].[Id] = @__request_Id_0
+[12:24:39 INF] () Start installing Hangfire SQL objects...
+[12:24:39 INF] () Hangfire SQL objects installed.
+[12:24:40 INF] () Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[12:24:40 INF] () Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[12:24:40 INF] () Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[12:24:40 INF] () Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[12:24:40 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[12:24:40 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[12:24:40 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[12:24:40 INF] () No migrations were applied. The database is already up to date.
+[12:24:40 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[12:24:40 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[12:24:40 INF] () User profile is available. Using 'C:\Users\vicen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[12:24:41 INF] () Now listening on: https://localhost:7121
+[12:24:41 INF] () Starting Hangfire Server using job storage: 'SQL Server: localhost\SQLEXPRESS@AppProject'
+[12:24:41 INF] () Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+[12:24:41 INF] () Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+[12:24:41 INF] () Application started. Press Ctrl+C to shut down.
+[12:24:41 INF] () Hosting environment: Development
+[12:24:41 INF] () Content root path: C:\Course\dotnet-template\AppProject.Core.API
+[12:24:41 INF] () Server desktop-0fm4m6s:19156:0afdf2dc successfully announced in 13.8819 ms
+[12:24:41 INF] () Server desktop-0fm4m6s:19156:0afdf2dc is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+[12:24:41 INF] () 1 servers were removed due to timeout
+[12:24:41 INF] () Server desktop-0fm4m6s:19156:0afdf2dc all the dispatchers started
+[12:24:41 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+[12:24:41 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 96.206ms
+[12:24:41 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui-standalone-preset.js - null null
+[12:24:41 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.js - null null
+[12:24:41 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui-bundle.js - null null
+[12:24:41 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.css - null null
+[12:24:41 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui.css - null null
+[12:24:41 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.js - 200 null application/javascript;charset=utf-8 71.3605ms
+[12:24:41 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.css - 200 152 text/css 88.4078ms
+[12:24:41 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui-standalone-preset.js - 200 77352 text/javascript 110.9872ms
+[12:24:41 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui.css - 200 23647 text/css 110.9897ms
+[12:24:41 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui-bundle.js - 200 424767 text/javascript 110.9872ms
+[12:24:42 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+[12:24:42 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/favicon-32x32.png - null null
+[12:24:42 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/favicon-32x32.png - 200 628 image/png 4.0391ms
+[12:24:42 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 121.7772ms
+[12:24:58 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/oauth2-redirect.html?code=lobc4jtGw8lBNGN09lZzY4sUsEX5F9O32_JK_vHB68_DX&state=RnJpIEp1biAxMiAyMDI2IDEyOjI0OjQ3IEdNVCswMjAwIChDZW50cmFsIEFmcmljYSBUaW1lKQ%3D%3D - null null
+[12:24:58 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/oauth2-redirect.html?code=lobc4jtGw8lBNGN09lZzY4sUsEX5F9O32_JK_vHB68_DX&state=RnJpIEp1biAxMiAyMDI2IDEyOjI0OjQ3IEdNVCswMjAwIChDZW50cmFsIEFmcmljYSBUaW1lKQ%3D%3D - 200 101 text/html 9.483ms
+[12:25:12 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/State/Get?Id=f1d8b343-b0e7-4196-0825-08dec7dc9378 - null null
+[12:25:14 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General)'
+[12:25:14 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Get", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(AppProject.Models.GetByIdRequest`1[System.Guid], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[12:25:14 INF] () Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[12:25:14 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Code], [s].[CountryId], [s].[RowVersion]
+FROM [States] AS [s]
+WHERE [s].[Id] = @__request_Id_0
+[12:25:14 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.EntityResponse`1[[AppProject.Core.Models.General.State, AppProject.Core.Models.General, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:25:14 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General) in 200.023ms
+[12:25:14 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General)'
+[12:25:14 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/State/Get?Id=f1d8b343-b0e7-4196-0825-08dec7dc9378 - 200 null application/json; charset=utf-8 1290.9315ms
+[12:26:04 INF] () Request starting HTTP/2 DELETE https://localhost:7121/api/general/State/Delete?Id=f1d8b343-b0e7-4196-0825-08dec7dc9378 - null null
+[12:26:04 INF] () CORS policy execution failed.
+[12:26:04 INF] () Request origin https://localhost:7121 does not have permission to access the resource.
+[12:26:04 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.DeleteAsync (AppProject.Core.Controllers.General)'
+[12:26:05 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Delete", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteAsync(AppProject.Models.DeleteRequest`1[System.Guid], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[12:26:05 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Code], [c].[CreatedAt], [c].[CreatedByUserId], [c].[CreatedByUserName], [c].[Name], [c].[RowVersion], [c].[UpdatedAt], [c].[UpdatedByUserId], [c].[UpdatedByUserName]
+FROM [Countries] AS [c]
+WHERE [c].[Id] = @__request_Id_0
+[12:26:26 INF] () Start installing Hangfire SQL objects...
+[12:26:27 INF] () Hangfire SQL objects installed.
+[12:26:28 INF] () Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[12:26:28 INF] () Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[12:26:28 INF] () Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[12:26:28 INF] () Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[12:26:28 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[12:26:28 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[12:26:28 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[12:26:28 INF] () No migrations were applied. The database is already up to date.
+[12:26:28 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[12:26:28 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[12:26:28 INF] () User profile is available. Using 'C:\Users\vicen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[12:26:28 INF] () Now listening on: https://localhost:7121
+[12:26:28 INF] () Starting Hangfire Server using job storage: 'SQL Server: localhost\SQLEXPRESS@AppProject'
+[12:26:28 INF] () Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+[12:26:28 INF] () Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+[12:26:28 INF] () Application started. Press Ctrl+C to shut down.
+[12:26:28 INF] () Hosting environment: Development
+[12:26:28 INF] () Content root path: C:\Course\dotnet-template\AppProject.Core.API
+[12:26:28 INF] () Server desktop-0fm4m6s:15528:e7505df7 successfully announced in 14.363 ms
+[12:26:29 INF] () Server desktop-0fm4m6s:15528:e7505df7 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+[12:26:29 INF] () Server desktop-0fm4m6s:15528:e7505df7 all the dispatchers started
+[12:26:32 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/State/Get?Id=f1d8b343-b0e7-4196-0825-08dec7dc9378 - null null
+[12:26:33 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General)'
+[12:26:33 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Get", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(AppProject.Models.GetByIdRequest`1[System.Guid], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[12:26:33 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[12:26:33 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Code], [s].[CountryId], [s].[RowVersion]
+FROM [States] AS [s]
+WHERE [s].[Id] = @__request_Id_0
+[12:26:33 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.EntityResponse`1[[AppProject.Core.Models.General.State, AppProject.Core.Models.General, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:26:33 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General) in 204.1924ms
+[12:26:33 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General)'
+[12:26:33 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/State/Get?Id=f1d8b343-b0e7-4196-0825-08dec7dc9378 - 200 null application/json; charset=utf-8 1375.9538ms
+[12:26:36 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/State/Get?Id=f1d8b343-b0e7-4196-0825-08dec7dc9378 - null null
+[12:26:36 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General)'
+[12:26:36 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Get", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsync(AppProject.Models.GetByIdRequest`1[System.Guid], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[12:26:36 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [s].[Code], [s].[CountryId], [s].[RowVersion]
+FROM [States] AS [s]
+WHERE [s].[Id] = @__request_Id_0
+[12:26:36 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.EntityResponse`1[[AppProject.Core.Models.General.State, AppProject.Core.Models.General, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:26:36 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General) in 9.6663ms
+[12:26:36 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.GetAsync (AppProject.Core.Controllers.General)'
+[12:26:36 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/State/Get?Id=f1d8b343-b0e7-4196-0825-08dec7dc9378 - 200 null application/json; charset=utf-8 25.3347ms
+[12:31:29 INF] () 2 servers were removed due to timeout
+[12:50:16 INF] () Start installing Hangfire SQL objects...
+[12:50:17 INF] () Hangfire SQL objects installed.
+[12:50:18 INF] () Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[12:50:18 INF] () Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[12:50:18 INF] () Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[12:50:18 INF] () Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[12:50:18 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[12:50:18 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[12:50:18 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[12:50:18 INF] () No migrations were applied. The database is already up to date.
+[12:50:18 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[12:50:18 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[12:50:18 INF] () User profile is available. Using 'C:\Users\vicen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[12:50:18 INF] () Now listening on: https://localhost:7121
+[12:50:18 INF] () Starting Hangfire Server using job storage: 'SQL Server: localhost\SQLEXPRESS@AppProject'
+[12:50:18 INF] () Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+[12:50:18 INF] () Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+[12:50:18 INF] () Application started. Press Ctrl+C to shut down.
+[12:50:18 INF] () Hosting environment: Development
+[12:50:18 INF] () Content root path: C:\Course\dotnet-template\AppProject.Core.API
+[12:50:18 INF] () Server desktop-0fm4m6s:23476:f7b4da50 successfully announced in 21.7658 ms
+[12:50:19 INF] () Server desktop-0fm4m6s:23476:f7b4da50 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+[12:50:19 INF] () 1 servers were removed due to timeout
+[12:50:19 INF] () Server desktop-0fm4m6s:23476:f7b4da50 all the dispatchers started
+[12:50:25 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+[12:50:25 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 148.1292ms
+[12:50:25 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui.css - null null
+[12:50:25 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui-bundle.js - null null
+[12:50:25 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui-standalone-preset.js - null null
+[12:50:25 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.css - null null
+[12:50:25 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.js - null null
+[12:50:25 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.js - 200 null application/javascript;charset=utf-8 53.7685ms
+[12:50:25 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.css - 200 152 text/css 241.5073ms
+[12:50:25 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui.css - 200 23647 text/css 289.3546ms
+[12:50:25 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui-standalone-preset.js - 200 77352 text/javascript 293.3638ms
+[12:50:25 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui-bundle.js - 200 424767 text/javascript 283.1915ms
+[12:50:25 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+[12:50:25 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/favicon-32x32.png - null null
+[12:50:25 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/favicon-32x32.png - 200 628 image/png 5.0572ms
+[12:50:26 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 136.4445ms
+[12:50:40 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/oauth2-redirect.html?code=qatxTuy9WM9bAP0rYJoPUrOyFa-GcphkrfyJqLLwSKL46&state=RnJpIEp1biAxMiAyMDI2IDEyOjUwOjI5IEdNVCswMjAwIChDZW50cmFsIEFmcmljYSBUaW1lKQ%3D%3D - null null
+[12:50:40 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/oauth2-redirect.html?code=qatxTuy9WM9bAP0rYJoPUrOyFa-GcphkrfyJqLLwSKL46&state=RnJpIEp1biAxMiAyMDI2IDEyOjUwOjI5IEdNVCswMjAwIChDZW50cmFsIEFmcmljYSBUaW1lKQ%3D%3D - 200 101 text/html 9.4224ms
+[12:52:37 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries - null null
+[12:52:38 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[12:52:38 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[12:52:38 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[12:52:39 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:52:39 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 146.2611ms
+[12:52:39 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[12:52:39 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries - 200 null application/json; charset=utf-8 1279.6256ms
+[12:53:02 INF] () Request starting HTTP/2 POST https://localhost:7121/api/general/State/Post - application/json 120
+[12:53:02 INF] () CORS policy execution failed.
+[12:53:02 INF] () Request origin https://localhost:7121 does not have permission to access the resource.
+[12:53:02 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General)'
+[12:53:02 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Post", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostAsync(AppProject.Models.CreateOrUpdateRequest`1[AppProject.Core.Models.General.State], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[12:53:02 INF] () Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[12:53:02 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (4ms) [Parameters=[@__state_CountryId_0='?' (DbType = Guid), @__state_Name_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [States] AS [s]
+        WHERE [s].[CountryId] = @__state_CountryId_0 AND [s].[Name] = @__state_Name_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[12:53:02 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 200), @p2='?' (DbType = Guid), @p3='?' (DbType = DateTimeOffset), @p4='?' (DbType = Guid), @p5='?' (Size = 255), @p6='?' (Size = 200), @p7='?' (DbType = DateTimeOffset), @p8='?' (DbType = Guid), @p9='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [States] ([Id], [Code], [CountryId], [CreatedAt], [CreatedByUserId], [CreatedByUserName], [Name], [UpdatedAt], [UpdatedByUserId], [UpdatedByUserName])
+OUTPUT INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+[12:53:02 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.KeyResponse`1[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[12:53:02 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General) in 373.5401ms
+[12:53:02 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General)'
+[12:53:02 INF] () Request finished HTTP/2 POST https://localhost:7121/api/general/State/Post - 200 null application/json; charset=utf-8 428.2508ms
+[12:53:49 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=6c0e3c33-2afb-4291-33c1-08dec58fdf6b - null null
+[12:53:49 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[12:53:49 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[12:53:49 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[@__request_CountryId_Value_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [c].[Name] AS [CountryName], [s].[CountryId]
+FROM [States] AS [s]
+INNER JOIN [Countries] AS [c] ON [s].[CountryId] = [c].[Id]
+WHERE [s].[CountryId] = @__request_CountryId_Value_0
+ORDER BY [s].[Name]
+[12:53:49 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[12:53:49 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 62.0986ms
+[12:53:49 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[12:53:49 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=6c0e3c33-2afb-4291-33c1-08dec58fdf6b - 200 null application/json; charset=utf-8 84.8889ms
+[13:02:20 INF] () Request starting HTTP/2 POST https://localhost:7121/api/general/State/Post - application/json 119
+[13:02:20 INF] () CORS policy execution failed.
+[13:02:20 INF] () Request origin https://localhost:7121 does not have permission to access the resource.
+[13:02:20 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General)'
+[13:02:20 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "Post", controller = "State"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PostAsync(AppProject.Models.CreateOrUpdateRequest`1[AppProject.Core.Models.General.State], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateController (AppProject.Core.Controllers.General).
+[13:02:20 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[13:02:20 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[@__state_CountryId_0='?' (DbType = Guid), @__state_Name_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [States] AS [s]
+        WHERE [s].[CountryId] = @__state_CountryId_0 AND [s].[Name] = @__state_Name_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[13:02:20 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 200), @p2='?' (DbType = Guid), @p3='?' (DbType = DateTimeOffset), @p4='?' (DbType = Guid), @p5='?' (Size = 255), @p6='?' (Size = 200), @p7='?' (DbType = DateTimeOffset), @p8='?' (DbType = Guid), @p9='?' (Size = 255)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [States] ([Id], [Code], [CountryId], [CreatedAt], [CreatedByUserId], [CreatedByUserName], [Name], [UpdatedAt], [UpdatedByUserId], [UpdatedByUserName])
+OUTPUT INSERTED.[RowVersion]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+[13:02:20 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.KeyResponse`1[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+[13:02:20 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General) in 45.035ms
+[13:02:20 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateController.PostAsync (AppProject.Core.Controllers.General)'
+[13:02:20 INF] () Request finished HTTP/2 POST https://localhost:7121/api/general/State/Post - 200 null application/json; charset=utf-8 88.5845ms
+[13:02:27 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=6c0e3c33-2afb-4291-33c1-08dec58fdf6b - null null
+[13:02:27 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[13:02:27 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[13:02:27 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (2ms) [Parameters=[@__request_CountryId_Value_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [c].[Name] AS [CountryName], [s].[CountryId]
+FROM [States] AS [s]
+INNER JOIN [Countries] AS [c] ON [s].[CountryId] = [c].[Id]
+WHERE [s].[CountryId] = @__request_CountryId_Value_0
+ORDER BY [s].[Name]
+[13:02:27 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:02:27 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 9.4916ms
+[13:02:27 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[13:02:27 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=6c0e3c33-2afb-4291-33c1-08dec58fdf6b - 200 null application/json; charset=utf-8 25.6759ms
+[13:18:33 INF] () Start installing Hangfire SQL objects...
+[13:18:34 INF] () Hangfire SQL objects installed.
+[13:18:35 INF] () Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[13:18:35 INF] () Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[13:18:35 INF] () Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[13:18:35 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[13:18:35 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[13:18:35 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[13:18:35 INF] () Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[13:18:35 INF] () No migrations were applied. The database is already up to date.
+[13:18:35 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[13:18:35 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[13:18:35 INF] () User profile is available. Using 'C:\Users\vicen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[13:18:36 INF] () Now listening on: https://localhost:7121
+[13:18:36 INF] () Starting Hangfire Server using job storage: 'SQL Server: localhost\SQLEXPRESS@AppProject'
+[13:18:36 INF] () Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+[13:18:36 INF] () Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+[13:18:36 INF] () Application started. Press Ctrl+C to shut down.
+[13:18:36 INF] () Hosting environment: Development
+[13:18:36 INF] () Content root path: C:\Course\dotnet-template\AppProject.Core.API
+[13:18:36 INF] () Server desktop-0fm4m6s:25120:fec19b45 successfully announced in 19.3532 ms
+[13:18:36 INF] () Server desktop-0fm4m6s:25120:fec19b45 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+[13:18:36 INF] () 1 servers were removed due to timeout
+[13:18:36 INF] () Server desktop-0fm4m6s:25120:fec19b45 all the dispatchers started
+[13:18:44 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.html - null null
+[13:18:45 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.html - 200 null text/html;charset=utf-8 139.5497ms
+[13:18:45 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui.css - null null
+[13:18:45 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.css - null null
+[13:18:45 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui-standalone-preset.js - null null
+[13:18:45 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/swagger-ui-bundle.js - null null
+[13:18:45 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/index.js - null null
+[13:18:45 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.js - 200 null application/javascript;charset=utf-8 86.2608ms
+[13:18:45 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/index.css - 200 152 text/css 248.8706ms
+[13:18:45 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui.css - 200 23647 text/css 316.4151ms
+[13:18:45 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui-standalone-preset.js - 200 77352 text/javascript 316.3561ms
+[13:18:45 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/swagger-ui-bundle.js - 200 424767 text/javascript 285.3296ms
+[13:18:45 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - null null
+[13:18:45 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/favicon-32x32.png - null null
+[13:18:45 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/favicon-32x32.png - 200 628 image/png 5.5413ms
+[13:18:45 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 133.4625ms
+[13:19:01 INF] () Request starting HTTP/2 GET https://localhost:7121/swagger/oauth2-redirect.html?code=wsz4QeBX48vcoHijsj71vXPMeTYtY4SUMwpolcgjFcc_7&state=RnJpIEp1biAxMiAyMDI2IDEzOjE4OjQ5IEdNVCswMjAwIChDZW50cmFsIEFmcmljYSBUaW1lKQ%3D%3D - null null
+[13:19:01 INF] () Request finished HTTP/2 GET https://localhost:7121/swagger/oauth2-redirect.html?code=wsz4QeBX48vcoHijsj71vXPMeTYtY4SUMwpolcgjFcc_7&state=RnJpIEp1biAxMiAyMDI2IDEzOjE4OjQ5IEdNVCswMjAwIChDZW50cmFsIEFmcmljYSBUaW1lKQ%3D%3D - 200 101 text/html 13.3775ms
+[13:19:16 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries - null null
+[13:19:17 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[13:19:17 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[13:19:17 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[13:19:17 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:19:17 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 164.7932ms
+[13:19:17 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[13:19:17 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries - 200 null application/json; charset=utf-8 1325.0112ms
+[13:19:48 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=6c0e3c33-2afb-4291-33c1-08dec58fdf6b - null null
+[13:19:48 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[13:19:48 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[13:19:48 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[@__request_CountryId_Value_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [c].[Name] AS [CountryName], [s].[CountryId]
+FROM [States] AS [s]
+INNER JOIN [Countries] AS [c] ON [s].[CountryId] = [c].[Id]
+WHERE [s].[CountryId] = @__request_CountryId_Value_0
+ORDER BY [s].[Name]
+[13:19:48 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:19:48 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 92.2328ms
+[13:19:48 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[13:19:48 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=6c0e3c33-2afb-4291-33c1-08dec58fdf6b - 200 null application/json; charset=utf-8 113.9877ms
+[13:22:06 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummary?Id=263ec573-b91f-4fa8-6e25-08dec870c69f - null null
+[13:22:06 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummaryAsync (AppProject.Core.Controllers.General)'
+[13:22:06 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummary", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummaryAsync(AppProject.Models.GetByIdRequest`1[System.Guid], System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[13:22:06 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (4ms) [Parameters=[@__request_Id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [c].[Name] AS [CountryName], [s].[CountryId]
+FROM [States] AS [s]
+INNER JOIN [Countries] AS [c] ON [s].[CountryId] = [c].[Id]
+WHERE [s].[Id] = @__request_Id_0
+[13:22:06 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummaryResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:22:06 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummaryAsync (AppProject.Core.Controllers.General) in 23.0096ms
+[13:22:06 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummaryAsync (AppProject.Core.Controllers.General)'
+[13:22:06 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummary?Id=263ec573-b91f-4fa8-6e25-08dec870c69f - 200 null application/json; charset=utf-8 84.414ms
+[13:23:47 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=0f3370cd-0d7a-4fbc-326b-08dec7d1a13e - null null
+[13:23:47 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[13:23:47 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[13:23:47 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (6ms) [Parameters=[@__request_CountryId_Value_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [c].[Name] AS [CountryName], [s].[CountryId]
+FROM [States] AS [s]
+INNER JOIN [Countries] AS [c] ON [s].[CountryId] = [c].[Id]
+WHERE [s].[CountryId] = @__request_CountryId_Value_0
+ORDER BY [s].[Name]
+[13:23:47 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:23:47 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 16.4718ms
+[13:23:47 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[13:23:47 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?CountryId=0f3370cd-0d7a-4fbc-326b-08dec7d1a13e - 200 null application/json; charset=utf-8 31.4267ms
+[13:24:19 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?SearchText=Kama - null null
+[13:24:19 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[13:24:19 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[13:24:19 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (8ms) [Parameters=[@__searchText_0_contains='?' (Size = 36) (DbType = AnsiString), @__searchText_0_contains_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [c].[Name] AS [CountryName], [s].[CountryId]
+FROM [States] AS [s]
+INNER JOIN [Countries] AS [c] ON [s].[CountryId] = [c].[Id]
+WHERE CONVERT(varchar(36), [s].[Id]) LIKE @__searchText_0_contains ESCAPE '\' OR [s].[Name] LIKE @__searchText_0_contains_1 ESCAPE N'\' OR COALESCE([s].[Code], N'') LIKE @__searchText_0_contains_1 ESCAPE N'\'
+ORDER BY [s].[Name]
+[13:24:19 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:24:19 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 44.933ms
+[13:24:19 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[13:24:19 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?SearchText=Kama - 200 null application/json; charset=utf-8 114.1862ms
+[13:24:28 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?SearchText=K - null null
+[13:24:28 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[13:24:28 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[13:24:28 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (1ms) [Parameters=[@__searchText_0_contains='?' (Size = 36) (DbType = AnsiString), @__searchText_0_contains_1='?' (Size = 200)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [c].[Name] AS [CountryName], [s].[CountryId]
+FROM [States] AS [s]
+INNER JOIN [Countries] AS [c] ON [s].[CountryId] = [c].[Id]
+WHERE CONVERT(varchar(36), [s].[Id]) LIKE @__searchText_0_contains ESCAPE '\' OR [s].[Name] LIKE @__searchText_0_contains_1 ESCAPE N'\' OR COALESCE([s].[Code], N'') LIKE @__searchText_0_contains_1 ESCAPE N'\'
+ORDER BY [s].[Name]
+[13:24:28 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:24:28 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 6.0429ms
+[13:24:28 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[13:24:28 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries?SearchText=K - 200 null application/json; charset=utf-8 15.4319ms
+[13:24:33 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries - null null
+[13:24:33 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[13:24:33 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "StateSummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Core.Models.General.StateSummarySearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.StateSummaryController (AppProject.Core.Controllers.General).
+[13:24:33 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name], [c].[Name] AS [CountryName], [s].[CountryId]
+FROM [States] AS [s]
+INNER JOIN [Countries] AS [c] ON [s].[CountryId] = [c].[Id]
+ORDER BY [s].[Name]
+[13:24:33 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.StateSummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[13:24:33 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 13.4313ms
+[13:24:33 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.StateSummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[13:24:33 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/StateSummary/GetSummaries - 200 null application/json; charset=utf-8 22.8871ms

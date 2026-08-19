@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <PackageReference Include="Mapster.DependencyInjection" Version="1.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.14" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.10">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Scrutor" Version="6.1.0" />
+    <PackageReference Include="Serilog" Version="4.3.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+    <PackageReference Include="Serilog.Sinks.Debug" Version="3.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="9.0.6" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="9.0.6" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AppProject.Core.Contracts\AppProject.Core.Contracts.csproj" />
+    <ProjectReference Include="..\AppProject.Core.Controllers.General\AppProject.Core.Controllers.General.csproj" />
+    <ProjectReference Include="..\AppProject.Core.Infraestructure.AI\AppProject.Core.Infraestructure.AI.csproj" />
+    <ProjectReference Include="..\AppProject.Core.Infraestructure.Database\AppProject.Core.Infraestructure.Database.csproj" />
+    <ProjectReference Include="..\AppProject.Core.Infraestructure.Email\AppProject.Core.Infraestructure.Email.csproj" />
+    <ProjectReference Include="..\AppProject.Core.Infraestructure.Jobs\AppProject.Core.Infraestructure.Jobs.csproj" />
+    <ProjectReference Include="..\AppProject.Core.Services.General\AppProject.Core.Services.General.csproj" />
+    <ProjectReference Include="..\AppProject.Core.Services\AppProject.Core.Services.csproj" />
+    <ProjectReference Include="..\AppProject.Resources\AppProject.Resources.csproj" />
+    <ProjectReference Include="..\AppProject.Utils\AppProject.Utils.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Auth\" />
+    <Folder Include="Bootstraps\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Controllers\Auth\" />
+    <Folder Include="EmailRenderer\" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+  </PropertyGroup>
+
+</Project>

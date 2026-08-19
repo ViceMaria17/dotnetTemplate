@@ -1,0 +1,13 @@
+﻿@page "/"
+
+@inherits AppProjectPageBase
+
+<PageTitle>@StringResource.GetStringByKey("Home_Title")</PageTitle>
+
+<RadzenText TextStyle="TextStyle.DisplayH3" Text=@StringResource.GetStringByKey("Home_Title")/>
+<RadzenText TextStyle="TextStyle.Body1" Text=@StringResource.GetStringByKey("Home_Message")/>
+
+@code
+{
+}
+

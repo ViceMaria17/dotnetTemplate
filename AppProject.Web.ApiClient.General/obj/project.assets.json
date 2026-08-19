@@ -1,0 +1,278 @@
+{
+  "version": 4,
+  "targets": {
+    "net9.0": {
+      "Refit/9.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0/Refit.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Refit.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard2.0/refit.props": {},
+          "buildTransitive/netstandard2.0/refit.targets": {}
+        }
+      },
+      "StyleCop.Analyzers/1.1.118": {
+        "type": "package"
+      },
+      "AppProject.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "AppProject.Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AppProject.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AppProject.Models.dll": {}
+        }
+      },
+      "AppProject.Utils/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/AppProject.Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AppProject.Utils.dll": {}
+        }
+      },
+      "AppProject.Web.ApiClient/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "AppProject.Utils": "1.0.0",
+          "AppProject.Web.Models": "1.0.0",
+          "Refit": "9.0.2"
+        },
+        "compile": {
+          "bin/placeholder/AppProject.Web.ApiClient.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AppProject.Web.ApiClient.dll": {}
+        }
+      },
+      "AppProject.Web.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "AppProject.Models": "1.0.0",
+          "AppProject.Utils": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AppProject.Web.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AppProject.Web.Models.dll": {}
+        }
+      },
+      "AppProject.Web.Models.General/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "AppProject.Utils": "1.0.0",
+          "AppProject.Web.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AppProject.Web.Models.General.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AppProject.Web.Models.General.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Refit/9.0.2": {
+      "sha512": "zLAfOh1iYE1bXFdnPjX5V6Nq8d4vBwxXaCovNNcAt9Fz3mfxAqHS3fckbBX4wetVgN1A6tIOzrDtPTN2c4FNrQ==",
+      "type": "package",
+      "path": "refit/9.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE/LICENSE",
+        "README.md",
+        "analyzers/dotnet/roslyn3.8/cs/InterfaceStubGeneratorV1.dll",
+        "analyzers/dotnet/roslyn4.1/cs/InterfaceStubGeneratorV2.dll",
+        "build/netstandard2.0/refit.targets",
+        "buildTransitive/netstandard2.0/refit.props",
+        "buildTransitive/netstandard2.0/refit.targets",
+        "lib/net10.0/Refit.dll",
+        "lib/net10.0/Refit.xml",
+        "lib/net462/Refit.dll",
+        "lib/net462/Refit.xml",
+        "lib/net8.0/Refit.dll",
+        "lib/net8.0/Refit.xml",
+        "lib/net9.0/Refit.dll",
+        "lib/net9.0/Refit.xml",
+        "lib/netstandard2.0/Refit.dll",
+        "lib/netstandard2.0/Refit.xml",
+        "refit.9.0.2.nupkg.sha512",
+        "refit.nuspec",
+        "refit_logo.png"
+      ]
+    },
+    "StyleCop.Analyzers/1.1.118": {
+      "sha512": "Onx6ovGSqXSK07n/0eM3ZusiNdB6cIlJdabQhWGgJp3Vooy9AaLS/tigeybOJAobqbtggTamoWndz72JscZBvw==",
+      "type": "package",
+      "path": "stylecop.analyzers/1.1.118",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.txt",
+        "analyzers/dotnet/cs/StyleCop.Analyzers.CodeFixes.dll",
+        "analyzers/dotnet/cs/StyleCop.Analyzers.dll",
+        "analyzers/dotnet/cs/de-DE/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/en-GB/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/es-MX/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/fr-FR/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/pl-PL/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/pt-BR/StyleCop.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/ru-RU/StyleCop.Analyzers.resources.dll",
+        "stylecop.analyzers.1.1.118.nupkg.sha512",
+        "stylecop.analyzers.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "AppProject.Models/1.0.0": {
+      "type": "project",
+      "path": "../AppProject.Models/AppProject.Models.csproj",
+      "msbuildProject": "../AppProject.Models/AppProject.Models.csproj"
+    },
+    "AppProject.Utils/1.0.0": {
+      "type": "project",
+      "path": "../AppProject.Utils/AppProject.Utils.csproj",
+      "msbuildProject": "../AppProject.Utils/AppProject.Utils.csproj"
+    },
+    "AppProject.Web.ApiClient/1.0.0": {
+      "type": "project",
+      "path": "../AppProject.Web.ApiClient/AppProject.Web.ApiClient.csproj",
+      "msbuildProject": "../AppProject.Web.ApiClient/AppProject.Web.ApiClient.csproj"
+    },
+    "AppProject.Web.Models/1.0.0": {
+      "type": "project",
+      "path": "../AppProject.Web.Models/AppProject.Web.Models.csproj",
+      "msbuildProject": "../AppProject.Web.Models/AppProject.Web.Models.csproj"
+    },
+    "AppProject.Web.Models.General/1.0.0": {
+      "type": "project",
+      "path": "../AppProject.Web.Models.General/AppProject.Web.Models.General.csproj",
+      "msbuildProject": "../AppProject.Web.Models.General/AppProject.Web.Models.General.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "AppProject.Utils >= 1.0.0",
+      "AppProject.Web.ApiClient >= 1.0.0",
+      "AppProject.Web.Models.General >= 1.0.0",
+      "StyleCop.Analyzers >= 1.1.118"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\vicen\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Course\\dotnet-template\\AppProject.Web.ApiClient.General\\AppProject.Web.ApiClient.General.csproj",
+      "projectName": "AppProject.Web.ApiClient.General",
+      "projectPath": "C:\\Course\\dotnet-template\\AppProject.Web.ApiClient.General\\AppProject.Web.ApiClient.General.csproj",
+      "packagesPath": "C:\\Users\\vicen\\.nuget\\packages\\",
+      "outputPath": "C:\\Course\\dotnet-template\\AppProject.Web.ApiClient.General\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\vicen\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "framework": "net9.0",
+          "targetAlias": "net9.0",
+          "projectReferences": {
+            "C:\\Course\\dotnet-template\\AppProject.Utils\\AppProject.Utils.csproj": {
+              "projectPath": "C:\\Course\\dotnet-template\\AppProject.Utils\\AppProject.Utils.csproj"
+            },
+            "C:\\Course\\dotnet-template\\AppProject.Web.ApiClient\\AppProject.Web.ApiClient.csproj": {
+              "projectPath": "C:\\Course\\dotnet-template\\AppProject.Web.ApiClient\\AppProject.Web.ApiClient.csproj"
+            },
+            "C:\\Course\\dotnet-template\\AppProject.Web.Models.General\\AppProject.Web.Models.General.csproj": {
+              "projectPath": "C:\\Course\\dotnet-template\\AppProject.Web.Models.General\\AppProject.Web.Models.General.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.300"
+    },
+    "frameworks": {
+      "net9.0": {
+        "framework": "net9.0",
+        "targetAlias": "net9.0",
+        "dependencies": {
+          "StyleCop.Analyzers": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[1.1.118, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[9.0.18, 9.0.18]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[9.0.18, 9.0.18]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[9.0.18, 9.0.18]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

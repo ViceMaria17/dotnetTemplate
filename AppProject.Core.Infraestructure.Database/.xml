@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AppProject.Core.Infraestructure.Database</name>
+    </assembly>
+    <members>
+        <member name="T:AppProject.Core.Infraestructure.Database.Migrations.Initial">
+            <inheritdoc />
+        </member>
+        <member name="M:AppProject.Core.Infraestructure.Database.Migrations.Initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AppProject.Core.Infraestructure.Database.Migrations.Initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AppProject.Core.Infraestructure.Database.Migrations.Initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:AppProject.Core.Infraestructure.Database.Migrations.Users">
+            <inheritdoc />
+        </member>
+        <member name="M:AppProject.Core.Infraestructure.Database.Migrations.Users.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AppProject.Core.Infraestructure.Database.Migrations.Users.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AppProject.Core.Infraestructure.Database.Migrations.Users.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:AppProject.Core.Infraestructure.Database.Migrations.ContriesStatesCities">
+            <inheritdoc />
+        </member>
+        <member name="M:AppProject.Core.Infraestructure.Database.Migrations.ContriesStatesCities.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AppProject.Core.Infraestructure.Database.Migrations.ContriesStatesCities.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AppProject.Core.Infraestructure.Database.Migrations.ContriesStatesCities.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

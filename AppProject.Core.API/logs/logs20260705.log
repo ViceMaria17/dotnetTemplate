@@ -1,0 +1,220 @@
+[15:09:17 INF] () Start installing Hangfire SQL objects...
+[15:09:18 INF] () Hangfire SQL objects installed.
+[15:09:20 INF] () Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[15:09:20 INF] () Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[15:09:20 INF] () Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[15:09:20 INF] () Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[15:09:20 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[15:09:20 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[15:09:20 INF] () Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[15:09:20 INF] () No migrations were applied. The database is already up to date.
+[15:09:20 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[15:09:21 INF] () Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[15:09:21 INF] () User profile is available. Using 'C:\Users\vicen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[15:09:21 INF] () Now listening on: https://localhost:7121
+[15:09:21 INF] () Starting Hangfire Server using job storage: 'SQL Server: localhost\SQLEXPRESS@AppProject'
+[15:09:21 INF] () Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+[15:09:21 INF] () Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+[15:09:21 INF] () Application started. Press Ctrl+C to shut down.
+[15:09:21 INF] () Hosting environment: Development
+[15:09:21 INF] () Content root path: C:\Course\dotnet-template\AppProject.Core.API
+[15:09:21 INF] () Server desktop-0fm4m6s:25068:ce199742 successfully announced in 36.7663 ms
+[15:09:21 INF] () Server desktop-0fm4m6s:25068:ce199742 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+[15:09:21 INF] () 1 servers were removed due to timeout
+[15:09:21 INF] () Server desktop-0fm4m6s:25068:ce199742 all the dispatchers started
+[15:09:22 INF] () Starting job SampleJob at "2026-07-05T13:09:22.1530602Z".
+[15:09:22 INF] () Executing SampleJob at "2026-07-05T13:09:22.1565020Z".
+[15:09:22 INF] () Completed job SampleJob at "2026-07-05T13:09:22.1586549Z".
+[15:14:06 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[15:14:06 INF] () CORS policy execution successful.
+[15:14:06 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 204 null null 105.6882ms
+[15:14:06 INF] () Request starting HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[15:14:06 INF] () CORS policy execution successful.
+[15:14:07 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[15:14:08 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetCurrentUserPermissions", controller = "Permission"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrentUserPermissionsAsync(AppProject.Models.Auth.PermissionContext, System.Threading.CancellationToken) on controller AppProject.Core.API.Controllers.Auth.PermissionController (AppProject.Core.API).
+[15:14:08 INF] () Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[15:14:08 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.Auth.PermissionType[]'.
+[15:14:08 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API) in 201.0172ms
+[15:14:08 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[15:14:08 INF] () Request finished HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 200 null application/json; charset=utf-8 1409.4054ms
+[15:17:06 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[15:17:06 INF] () CORS policy execution successful.
+[15:17:06 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 204 null null 9.8617ms
+[15:17:06 INF] () Request starting HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[15:17:06 INF] () CORS policy execution successful.
+[15:17:06 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[15:17:06 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetCurrentUserPermissions", controller = "Permission"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrentUserPermissionsAsync(AppProject.Models.Auth.PermissionContext, System.Threading.CancellationToken) on controller AppProject.Core.API.Controllers.Auth.PermissionController (AppProject.Core.API).
+[15:17:06 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.Auth.PermissionType[]'.
+[15:17:06 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API) in 4.4819ms
+[15:17:06 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[15:17:06 INF] () Request finished HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 200 null application/json; charset=utf-8 29.1714ms
+[15:21:51 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[15:21:51 INF] () CORS policy execution successful.
+[15:21:51 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 204 null null 68.8613ms
+[15:21:51 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[15:21:51 INF] () CORS policy execution successful.
+[15:21:51 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[15:21:51 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[15:22:00 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (34ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[15:22:06 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[15:22:27 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 36011.9462ms
+[15:22:27 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[15:22:43 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 52043.0047ms
+[15:23:51 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[15:23:51 INF] () CORS policy execution successful.
+[15:23:51 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 204 null null 3.8205ms
+[15:23:51 INF] () Request starting HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[15:23:51 INF] () CORS policy execution successful.
+[15:23:51 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[15:23:51 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetCurrentUserPermissions", controller = "Permission"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrentUserPermissionsAsync(AppProject.Models.Auth.PermissionContext, System.Threading.CancellationToken) on controller AppProject.Core.API.Controllers.Auth.PermissionController (AppProject.Core.API).
+[15:23:51 INF] () Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[15:23:51 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.Auth.PermissionType[]'.
+[15:23:51 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API) in 18.1605ms
+[15:23:51 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[15:23:51 INF] () Request finished HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 200 null application/json; charset=utf-8 29.0645ms
+[15:23:57 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[15:23:57 INF] () CORS policy execution successful.
+[15:23:57 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 204 null null 5.3725ms
+[15:23:58 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[15:23:58 INF] () CORS policy execution successful.
+[15:23:58 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[15:23:58 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[15:24:01 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[15:24:01 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[15:24:01 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 3061.0308ms
+[15:24:01 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[15:24:01 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 3074.2011ms
+[15:36:32 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[15:36:32 INF] () CORS policy execution successful.
+[15:36:32 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 204 null null 27.1344ms
+[15:36:32 INF] () Request starting HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[15:36:32 INF] () CORS policy execution successful.
+[15:36:32 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[15:36:32 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetCurrentUserPermissions", controller = "Permission"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrentUserPermissionsAsync(AppProject.Models.Auth.PermissionContext, System.Threading.CancellationToken) on controller AppProject.Core.API.Controllers.Auth.PermissionController (AppProject.Core.API).
+[15:36:32 INF] () Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[15:36:32 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.Auth.PermissionType[]'.
+[15:36:32 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API) in 13.0089ms
+[15:36:32 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[15:36:32 INF] () Request finished HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 200 null application/json; charset=utf-8 34.0444ms
+[15:37:28 INF] () Start installing Hangfire SQL objects...
+[15:37:29 INF] () Hangfire SQL objects installed.
+[15:37:30 INF] () Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[15:37:30 INF] () Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+[15:37:30 INF] () Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+[15:37:30 INF] () Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+[15:37:30 INF] () Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+[15:37:30 INF] () Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+[15:37:30 INF] () Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+[15:37:30 INF] () No migrations were applied. The database is already up to date.
+[15:37:30 INF] () Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+[15:37:30 INF] () Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[15:37:30 INF] () User profile is available. Using 'C:\Users\vicen\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+[15:37:31 INF] () Now listening on: https://localhost:7121
+[15:37:31 INF] () Starting Hangfire Server using job storage: 'SQL Server: localhost\SQLEXPRESS@AppProject'
+[15:37:31 INF] () Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+[15:37:31 INF] () Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+[15:37:31 INF] () Application started. Press Ctrl+C to shut down.
+[15:37:31 INF] () Hosting environment: Development
+[15:37:31 INF] () Content root path: C:\Course\dotnet-template\AppProject.Core.API
+[15:37:31 INF] () Server desktop-0fm4m6s:28468:77771995 successfully announced in 15.5413 ms
+[15:37:31 INF] () Server desktop-0fm4m6s:28468:77771995 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+[15:37:31 INF] () Server desktop-0fm4m6s:28468:77771995 all the dispatchers started
+[15:38:27 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[15:38:27 INF] () CORS policy execution successful.
+[15:38:27 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 204 null null 65.4141ms
+[15:38:27 INF] () Request starting HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - null null
+[15:38:27 INF] () CORS policy execution successful.
+[15:38:28 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[15:38:28 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetCurrentUserPermissions", controller = "Permission"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCurrentUserPermissionsAsync(AppProject.Models.Auth.PermissionContext, System.Threading.CancellationToken) on controller AppProject.Core.API.Controllers.Auth.PermissionController (AppProject.Core.API).
+[15:38:28 INF] () Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedAt], [u].[CreatedByUserId], [u].[CreatedByUserName], [u].[Email], [u].[IsSystemAdmin], [u].[Name], [u].[RowVersion], [u].[UpdatedAt], [u].[UpdatedByUserId], [u].[UpdatedByUserName]
+FROM [Users] AS [u]
+WHERE [u].[IsSystemAdmin] = CAST(1 AS bit)
+[15:38:28 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.Auth.PermissionType[]'.
+[15:38:28 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API) in 127.1103ms
+[15:38:28 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.API.Controllers.Auth.PermissionController.GetCurrentUserPermissionsAsync (AppProject.Core.API)'
+[15:38:29 INF] () Request finished HTTP/2 GET https://localhost:7121/api/auth/Permission/GetCurrentUserPermissions - 200 null application/json; charset=utf-8 1516.2676ms
+[15:38:37 INF] () Request starting HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[15:38:37 INF] () CORS policy execution successful.
+[15:38:37 INF] () Request finished HTTP/2 OPTIONS https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 204 null null 14.0928ms
+[15:38:37 INF] () Request starting HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - null null
+[15:38:37 INF] () CORS policy execution successful.
+[15:38:37 INF] (vicente.maria.vm17@gmail.com) Executing endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[15:38:37 INF] (vicente.maria.vm17@gmail.com) Route matched with {action = "GetSummaries", controller = "CountrySummary"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSummariesAsync(AppProject.Models.SearchRequest, System.Threading.CancellationToken) on controller AppProject.Core.Controllers.General.CountrySummaryController (AppProject.Core.Controllers.General).
+[15:38:41 INF] (vicente.maria.vm17@gmail.com) Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(@__p_0) [c].[Id], [c].[Name]
+FROM [Countries] AS [c]
+ORDER BY [c].[Name]
+[15:38:41 INF] (vicente.maria.vm17@gmail.com) Executing OkObjectResult, writing value of type 'AppProject.Models.SummariesResponse`1[[AppProject.Core.Models.General.CountrySummary, AppProject.Core.Models, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+[15:38:41 INF] (vicente.maria.vm17@gmail.com) Executed action AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General) in 4374.3154ms
+[15:38:41 INF] (vicente.maria.vm17@gmail.com) Executed endpoint 'AppProject.Core.Controllers.General.CountrySummaryController.GetSummariesAsync (AppProject.Core.Controllers.General)'
+[15:38:41 INF] () Request finished HTTP/2 GET https://localhost:7121/api/general/CountrySummary/GetSummaries?Take=100 - 200 null application/json; charset=utf-8 4397.6497ms
